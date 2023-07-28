@@ -10,7 +10,7 @@ import com.learnedge.backend.service.UserService;
 @RequestMapping("/user")
 public class UserController {
 
-    @Autowired
+    @Autowired   //Dependancy Injection
     UserService userService;
     @GetMapping
     public String back(){
