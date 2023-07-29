@@ -1,10 +1,7 @@
 package com.learnedge.backend.service;
 
-import org.springframework.stereotype.Service;
+import com.learnedge.backend.entity.Tutor;
 
-@Service
-public class TutorService {
-    public String hello(){
-        return "Tutor under construction";
-    }
+public interface TutorService {
+    public Tutor saveTutor(Tutor tutor);
 }
