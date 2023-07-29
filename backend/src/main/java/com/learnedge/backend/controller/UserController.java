@@ -5,6 +5,8 @@ import com.learnedge.backend.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 //@CrossOrigin(origins = "http://localhost:5173")
 @RestController
 @RequestMapping("/user")
@@ -20,5 +22,12 @@ public class UserController {
     public User saveUser(@RequestBody User user){
         return userService.saveUser(user);
     }
-
+    @GetMapping("/getusers")
+    public List <User> fetchUsersList(){
+        return userService.fetchUsersList();
+    }
+    @GetMapping("/{id}")
+    public User fetchUserById(@PathVariable("id") Long userId ){
+        return userService.fetchUserById(userId);
+    }
 }

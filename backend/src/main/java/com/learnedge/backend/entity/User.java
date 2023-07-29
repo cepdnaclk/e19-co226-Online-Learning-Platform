@@ -10,23 +10,23 @@ import java.util.Date;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long studentId;
+    private Long userId;
 
     private String password;
     private String firstName;
     private String lastName;
-    private String studentEmail;
+    private String userEmail;
     private String phoneNumber;
     private Date dateRegistered;
     private Date dateOfBirth;
 
     //Getters and Setters
-    public Long getStudentId() {
-        return studentId;
+    public Long getUserId() {
+        return userId;
     }
 
-    public void setStudentId(Long studentId) {
-        this.studentId = studentId;
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 
     public String getPassword() {
@@ -53,12 +53,12 @@ public class User {
         this.lastName = lastName;
     }
 
-    public String getStudentEmail() {
-        return studentEmail;
+    public String getUserEmail() {
+        return userEmail;
     }
 
-    public void setStudentEmail(String studentEmail) {
-        this.studentEmail = studentEmail;
+    public void setUserEmail(String studentEmail) {
+        this.userEmail = studentEmail;
     }
 
     public String getPhoneNumber() {
@@ -86,12 +86,12 @@ public class User {
     }
 
     //Constructor
-    public User(Long studentId, String password, String firstName, String lastName, String studentEmail, String phoneNumber, Date dateRegistered, Date dateOfBirth) {
-        this.studentId = studentId;
+    public User(Long userId, String password, String firstName, String lastName, String userEmail, String phoneNumber, Date dateRegistered, Date dateOfBirth) {
+        this.userId = userId;
         this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.studentEmail = studentEmail;
+        this.userEmail = userEmail;
         this.phoneNumber = phoneNumber;
         this.dateRegistered = dateRegistered;   //JSON Format: 2023-07-29
         this.dateOfBirth = dateOfBirth;         //JSON Format: YYYY-MM-DD
@@ -99,5 +99,4 @@ public class User {
     public User() {
 
     }
-
 }
