@@ -93,8 +93,8 @@ public class User {
         this.lastName = lastName;
         this.studentEmail = studentEmail;
         this.phoneNumber = phoneNumber;
-        this.dateRegistered = dateRegistered;
-        this.dateOfBirth = dateOfBirth;
+        this.dateRegistered = dateRegistered;   //JSON Format: 2023-07-29
+        this.dateOfBirth = dateOfBirth;         //JSON Format: YYYY-MM-DD
     }
     public User() {
 
