@@ -84,6 +84,8 @@ public class User {
     public void setDateOfBirth(Date dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
+
+    //Constructor
     public User(Long studentId, String password, String firstName, String lastName, String studentEmail, String phoneNumber, Date dateRegistered, Date dateOfBirth) {
         this.studentId = studentId;
         this.password = password;
