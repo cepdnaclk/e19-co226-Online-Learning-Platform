@@ -1,24 +1,24 @@
 package com.learnedge.backend.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.learnedge.backend.entity.User;
 import com.learnedge.backend.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
+//@CrossOrigin(origins = "http://localhost:5173")
 @RestController
 @RequestMapping("/user")
 public class UserController {
-
     @Autowired   //Dependancy Injection
-    UserService userService;
-    @GetMapping
-    public String back(){
-        return userService.back();
-    }
+    private UserService userService;
+
     @GetMapping("/profile")
     public String Hello(){
         return "Profile is under API development process";
+    }
+    @PostMapping("/adduser")  //To add a user to the database table
+    public User saveUser(@RequestBody User user){
+        return userService.saveUser(user);
     }
 
 }

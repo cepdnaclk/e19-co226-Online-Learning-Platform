@@ -1,10 +1,8 @@
 package com.learnedge.backend.service;
 
-import org.springframework.stereotype.Service;
+import com.learnedge.backend.entity.User;
 
-@Service
-public class UserService {
-    public String back(){
-        return "backend under construction";
-    }
+public interface UserService {
+    public User saveUser(User user);
+
 }
