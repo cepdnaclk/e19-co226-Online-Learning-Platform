@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-//@CrossOrigin(origins = "http://localhost:5173")
 @RestController
+@CrossOrigin(origins = "http://localhost:5173")
 @RequestMapping("/user")
 public class UserController {
     @Autowired   //Dependancy Injection
