@@ -43,6 +43,7 @@ Our online learning platform offers a revolutionary solution to the drawbacks of
 <img src="https://github.com/cepdnaclk/e19-co226-Online-Learning-Platform/assets/115539769/6eb844b1-1fe7-4e11-ab21-2d2ffa1c825f" />
 
 ## Relational Mapping
+<img src="https://github.com/cepdnaclk/e19-co226-Online-Learning-Platform/assets/115540884/25e3b315-4c07-4917-b373-1aae651a2fd4" />
 
 
 ## Data Flow
