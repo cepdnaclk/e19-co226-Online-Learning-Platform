@@ -1,9 +1,17 @@
+import React, { useState, useEffect } from 'react';
+import { Route, Routes } from 'react-router-dom';
+
+import UserDashboard from "./User_Files/UserDashboard"
+import Homepage from './HomePage_Files/Homepage';
+
 function App() {
 
   return (
-    <>
-      <h1 className="text-3xl font-bold ">Frontend Under construction</h1>
-    </>
+    <Routes>
+      <Route path="/" element={<Homepage />} />
+      <Route path='/user' element={<UserDashboard />} />
+      {/* <Route path="/user/dashboard/:id" element={<UserDashboard />} /> */}
+    </Routes>
   )
 }
 
