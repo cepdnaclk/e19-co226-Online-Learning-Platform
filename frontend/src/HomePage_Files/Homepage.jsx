@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import HomepageNavbar from "./HomepageNavbar";
 import Footer from "../Navbar_Files/Footer";
-import homepageimage1 from "../components/images/homepageimage1.jpg"
+import homepageimage1 from "../components/images/homepageimage1.png"
 
 function Homepage() {
 
@@ -27,12 +27,12 @@ function Homepage() {
             <div className="pb-20 select-none">
                 {/* Webpage content goes inside this div */}
 
-                <div className="flex flex-wrap p-5">
+                <div className="flex flex-wrap p-5 pb-0">
                     <div className="w-full md:w-1/3">
                         <h1 className="text-7xl">LEARN ANYTIME ANYWHERE</h1>
                         <p className="py-5">
                             Start, switch, or advance your career with more than 2000 courses, Professional
-                            Certificates, and degrees from world-class universities and companies.
+                            Certificates, and degrees from world-class universities.
                         </p>
                         <p className="pb-5">
                             Are you eager to embark on a journey of continuous learning and self-improvement?
