@@ -17,13 +17,13 @@ function Navbar() {
                         <img src={Logo} width="30" className="inline-block transform -translate-y-2" alt="Logo" />
                     </div>
                     <span
-                        className="text-2xl sm:text-4xl font-mono inline-block">
+                        className="text-2xl sm:text-4xl font-mono inline-block mb-2">
                         Learn<span className="text-red-600">E</span>dge
                     </span>
                 </div>
 
                 <div
-                    className={`nav-links bg-gray-800 duration-500 md:static absolute md:min-h-fit min-h-[45vh] left-0 ${isMenuOpen ? 'top-[11%] bg-gray-600' : 'top-[-100%] bg-gray-800'
+                    className={`nav-links bg-gray-800 duration-500 md:static absolute md:min-h-fit min-h-[45vh] left-0 ${isMenuOpen ? 'top-[10%] bg-gray-600' : 'top-[-100%] bg-gray-800'
                         } md:w-auto w-full flex items-center px-5`}
                 >
                     <ul className="flex md:flex-row flex-col md:items-center md:gap-[4vw] gap-8">
@@ -37,7 +37,7 @@ function Navbar() {
                 <div
                     className="flex items-center gap-6">
                     <button
-                        className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+                        className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
                     >
                         Log In
                     </button>
