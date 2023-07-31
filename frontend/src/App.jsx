@@ -10,6 +10,10 @@ import User from './User_Files/User';
 import UserCourses from './User_Files/UserCourses';
 import UserContact from './User_Files/UserContact';
 
+import Tutor from './Tutor_Files/Tutor';
+import TutorPublish from './Tutor_Files/TutorPublish'
+import TutorContact from './Tutor_Files/TutorContact';
+
 function App() {
 
   return (
@@ -27,6 +31,9 @@ function App() {
       <Route path="/user/contact" element={<UserContact />} />
 
       {/* Tutor */}
+      <Route path="/tutor" element={<Tutor />} />
+      <Route path="/tutor/publish" element={<TutorPublish />} />
+      <Route path="/tutor/contact" element={<TutorContact />} />
     </Routes>
   )
 }
