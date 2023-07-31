@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
+import Navbar from "../Navbar_Files/Navbar";
 
 function Homepage() {
 
@@ -19,6 +20,7 @@ function Homepage() {
 
     return (
         <>
+            <Navbar />
             <h1 className="text-3xl font-bold ">Homepage Under construction</h1>
             <h2 className="text-2xl font-bold ">List Of Courses:</h2>
 
