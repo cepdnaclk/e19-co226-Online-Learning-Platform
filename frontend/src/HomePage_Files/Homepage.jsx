@@ -4,7 +4,8 @@ import { useState } from "react";
 import { useEffect } from "react";
 import HomepageNavbar from "./HomepageNavbar";
 import Footer from "../Navbar_Files/Footer";
-import homepageimage1 from "../components/images/homepageimage1.png"
+
+import ImageSlider from "./ImageSilder";
 
 function Homepage() {
 
@@ -45,7 +46,7 @@ function Homepage() {
                     </div>
                     <div className="w-full md:w-1/3"></div>
                     <div className="w-full md:w-1/3">
-                        <img src={homepageimage1} alt="Image" className="w-full h-auto" />
+                        <ImageSlider />
                     </div>
                 </div>
 
