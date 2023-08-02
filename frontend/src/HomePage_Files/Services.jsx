@@ -9,7 +9,7 @@ export default function Services() {
             <HomepageNavbar />
             <div className='pb-20 p-5 select-none'>
                 {/* content goes inside this div */}
-                <h1 className='text-4xl font-bold'>Our Services</h1>
+                <h1 className='text-4xl font-bold text-center'>Our Services</h1>
                 <h2 className='text-2xl py-3 font-medium'>Course Hosting and Delivery 📚</h2>
                 <p>LearnEdge host the course content and provide a learning management system (LMS) to deliver the courses to learners. They handle the technical aspects of hosting videos, documents, quizzes, and other learning materials.</p>
 
