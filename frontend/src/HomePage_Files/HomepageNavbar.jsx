@@ -8,8 +8,16 @@ function HomepageNavbar() {
 
     const navigate = useNavigate();
 
+    // Dashboard Navigation
     const navigateDashBoard = (e, path) => {
         e.preventDefault();
+        navigate(path);
+    }
+
+    // Login Navigation
+    const loginPath = "/login"
+
+    const navigateSignup = (path) => {
         navigate(path);
     }
 
@@ -51,6 +59,7 @@ function HomepageNavbar() {
                     className="flex items-center gap-6">
                     <button
                         className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-2 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+                        onClick={() => navigateSignup(loginPath)}
                     >
                         Log In
                     </button>

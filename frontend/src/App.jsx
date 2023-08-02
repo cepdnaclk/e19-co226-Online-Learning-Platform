@@ -14,6 +14,9 @@ import Tutor from './Tutor_Files/Tutor';
 import TutorPublish from './Tutor_Files/TutorPublish'
 import TutorContact from './Tutor_Files/TutorContact';
 
+import LoginForm from './Login_Files/LoginForm';
+import RegisterForm from './Login_Files/RegisterForm'
+
 function App() {
 
   return (
@@ -34,6 +37,10 @@ function App() {
       <Route path="/tutor" element={<Tutor />} />
       <Route path="/tutor/publish" element={<TutorPublish />} />
       <Route path="/tutor/contact" element={<TutorContact />} />
+
+      {/* Login/Sign In */}
+      <Route path="/login" element={<LoginForm />} />
+      <Route path="/register" element={<RegisterForm />} />
     </Routes>
   )
 }

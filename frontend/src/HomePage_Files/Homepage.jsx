@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import HomepageNavbar from "./HomepageNavbar";
 import Footer from "../Navbar_Files/Footer";
 
@@ -19,6 +20,14 @@ function Homepage() {
         const listOfCourses = await axios.get("http://localhost:9081/course/getcourses")
         //console.log(listOfCourses.data)
         setCourses(listOfCourses.data)
+    }
+
+    // Navigation of signup button
+    const registerPath = "/register"
+    const navigate = useNavigate();
+
+    const navigateSignup = (path) => {
+        navigate(path);
     }
 
     return (
@@ -40,8 +49,9 @@ function Homepage() {
                             Look no further! <b>Join LearnEdge</b>🌟
                         </p>
                         <button
-                            class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-2 focus:ring-green-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Sign
-                            Up</button>
+                            class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-2 focus:ring-green-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+                            onClick={() => navigateSignup(registerPath)} >
+                            Sign Up</button>
                         <p className="mt-8"></p>
                     </div>
                     <div className="w-full md:w-1/3"></div>
