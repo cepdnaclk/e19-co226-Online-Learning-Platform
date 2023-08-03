@@ -20,4 +20,7 @@ public class Course {
     private Long courseId;
 
     private String courseName;
+    private String courseCategory;
+    //Programming, Artificial Intelligence, History, Machine Learning, Law, Web Development, other(default) --> Update this with more categories
+    private String price;
 }
