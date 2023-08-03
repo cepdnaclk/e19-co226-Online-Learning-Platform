@@ -20,7 +20,7 @@ function LoginForm() {
                     <div className="max-w-md mx-auto">
                         <div>
                             <h1 className="text-2xl font-semibold">
-                                Login
+                                Log In
                             </h1>
                         </div>
                         <div className="divide-y divide-gray-200">
@@ -60,13 +60,13 @@ function LoginForm() {
                                 </div>
                                 <div className="relative">
                                     <button
-                                        className="mt-3 bg-blue-500 text-white rounded-md px-5 py-1">
+                                        className="mt-3 bg-blue-500 text-white rounded-md px-5 py-1 w-full">
                                         Submit
                                     </button>
                                 </div>
                                 <div className="relative">
                                     <button
-                                        className="bg-green-500 text-white rounded-md px-5 py-1"
+                                        className="bg-green-500 text-white rounded-md px-5 py-1 w-full"
                                         onClick={() => navigateHome(homePath)}>
                                         Back
                                     </button>
