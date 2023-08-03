@@ -78,11 +78,18 @@ function Homepage() {
         }
     };
 
-    // Navigation of signup button
+    // Navigation of Sign Up button
     const registerPath = "/register"
     const navigate = useNavigate();
 
     const navigateSignup = (path) => {
+        navigate(path);
+    }
+
+    // Navigation of Tutor Sign Up button
+    const registerTutor = "/regtutor"
+
+    const navigateSignupTutor = (path) => {
         navigate(path);
     }
 
@@ -108,7 +115,8 @@ function Homepage() {
                         <button
                             className="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-2 focus:ring-green-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
                             onClick={() => navigateSignup(registerPath)} >
-                            Sign Up</button>
+                            Sign Up
+                        </button>
                         <p className="mt-8"></p>
                     </div>
                     <div className="w-full md:w-1/3"></div>
@@ -120,7 +128,7 @@ function Homepage() {
                 {/* Container: Find Courses for You  */}
                 <div className="bg-gray-300 text-4xl px-5 py-6">
                     <div className="container mx-auto">
-                        Find Courses for you:
+                        Find Courses for you 📚
                     </div>
                 </div>
 
@@ -128,6 +136,36 @@ function Homepage() {
                 <div className="px-5 pb-5">
                     <SlickSlider listOfItems={courseList} />
                 </div>
+
+                {/* Container: Welcome, Tutors! */}
+                <div className="bg-gray-300 text-4xl px-5 py-6">
+                    <div className="container mx-auto">
+                        Welcome, Tutors! 👨‍🏫
+                    </div>
+                </div>
+
+                {/* Content: Welcome, Tutors! */}
+                <div className="text-xl p-5">
+                    <p>Are you passionate about teaching and sharing your knowledge with eager learners?</p>
+                    <p className="py-5">Join LearnEdge and become a part of our growing community of educators!</p>
+                    <p>Why choose us? 🤔</p>
+                    <ul>
+                        <li className="p-2 pl-6"> ➤ Reach a global audience of motivated students eager to learn from you.</li>
+                        <li className="p-2 pl-6"> ➤ Set your own schedule and teach at your convenience.</li>
+                        <li className="p-2 pl-6"> ➤ Share your expertise in any subject or skill you're passionate about.</li>
+                        <li className="p-2 pl-6"> ➤ Earn a competitive income doing what you love.</li>
+                    </ul>
+                    <p className="pt-2 mb-3">How to Get Started? 🚀</p>
+                    <p>Click
+                        <button
+                            className="mx-3 focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-2 focus:ring-green-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+                            onClick={() => navigateSignupTutor(registerTutor)} >
+                            Sign Up as a Tutor
+                        </button>
+                        and create your tutor account.
+                    </p>
+                </div>
+
                 {/* Other content from here */}
 
             </div >

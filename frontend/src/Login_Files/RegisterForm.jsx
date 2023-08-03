@@ -10,7 +10,7 @@ import { LiaBirthdayCakeSolid } from 'react-icons/lia';
 import { TiArrowBack } from 'react-icons/ti';
 import { FiLogIn } from 'react-icons/fi';
 
-import Logo from '../components/images/Logo.png'
+import User from '../components/images/registerImages/user.png'
 
 function RegisterForm() {
 
@@ -26,8 +26,8 @@ function RegisterForm() {
         <div className="min-w-screen min-h-screen bg-gray-900 flex items-center justify-center px-5 py-5">
             <div className="bg-gray-100 text-gray-500 rounded-3xl shadow-xl w-full overflow-hidden" style={{ maxWidth: "1000px" }}>
                 <div className="md:flex w-full">
-                    <div className="hidden md:block w-1/2 bg-indigo-500 py-10 px-1">
-                        <img src={Logo} />
+                    <div className="hidden md:block w-1/2 bg-indigo-500 py-12 px-4 ">
+                        <img src={User} className="mt-10" />
                     </div>
                     <div className="w-full md:w-1/2 py-10 px-5 md:px-10">
                         <div className="text-center mb-10">
