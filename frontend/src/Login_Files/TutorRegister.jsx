@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react';
 
 import { useNavigate } from "react-router-dom";
+
+import axios from 'axios';
 
 import { GiTeacher } from 'react-icons/gi';
 import { MdPassword } from 'react-icons/md';
@@ -15,11 +17,38 @@ export default function TutorRegister() {
 
     const navigate = useNavigate();
 
+    //Navigate To Home Page
     const homePath = "/"
 
     const navigateHome = (path) => {
         navigate(path);
     }
+
+    //Set the values
+    const [formData, setFormData] = useState({
+        tutorName: '',
+        tutorEmail: '',
+        phoneNumber: '',
+        password: ''
+    });
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value });
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        axios.post('http://localhost:9081/tutor/addtutor', formData)
+            .then((response) => {
+                window.alert("Registered successfully. Publish your Courses!")
+                navigateHome(homePath)
+            })
+            .catch((error) => {
+                console.error('Error submitting form:', error);
+            });
+    };
 
     return (
         <div className="min-w-screen min-h-screen bg-gray-900 flex items-center justify-center px-5 py-5">
@@ -35,17 +64,28 @@ export default function TutorRegister() {
                             <p>Enter your information to register</p>
                         </div>
 
-                        <div>
+                        <form onSubmit={handleSubmit}>
                             {/* Tutor Name */}
                             <div className="flex -mx-3">
                                 <div className="w-full px-3 mb-2">
-                                    <label className="text-xs font-semibold px-1">Tutor / Institute Name</label>
+                                    <label
+                                        className="text-xs font-semibold px-1">
+                                        Tutor / Institute Name
+                                        <span className='text-red-500 '> *</span>
+                                    </label>
                                     <div className="flex">
                                         <div className="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center">
                                             <GiTeacher />
                                         </div>
-                                        <input type="text" className="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
-                                            placeholder="Tutor / Institute Name" />
+                                        <input
+                                            type="text"
+                                            className="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
+                                            placeholder="Tutor / Institute Name"
+                                            name="tutorName"
+                                            value={formData.tutorName}
+                                            onChange={handleChange}
+                                            required
+                                        />
                                     </div>
                                 </div>
                             </div>
@@ -53,13 +93,24 @@ export default function TutorRegister() {
                             {/* Tutor Email */}
                             <div className="flex -mx-3">
                                 <div className="w-full px-3 mb-2">
-                                    <label className="text-xs font-semibold px-1">Email</label>
+                                    <label
+                                        className="text-xs font-semibold px-1">
+                                        Email Address
+                                        <span className='text-red-500 '> *</span>
+                                    </label>
                                     <div className="flex">
                                         <div className="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center">
                                             <HiOutlineMail />
                                         </div>
-                                        <input type="email" className="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
-                                            placeholder="institute@example.com" />
+                                        <input
+                                            type="email"
+                                            className="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
+                                            placeholder="institute@example.com"
+                                            name="tutorEmail"
+                                            value={formData.tutorEmail}
+                                            onChange={handleChange}
+                                            required
+                                        />
                                     </div>
                                 </div>
                             </div>
@@ -67,14 +118,23 @@ export default function TutorRegister() {
                             {/* Phone Number */}
                             <div className="flex -mx-3">
                                 <div className="w-full px-3 mb-2">
-                                    <label className="text-xs font-semibold px-1">Phone Number</label>
+                                    <label
+                                        className="text-xs font-semibold px-1">
+                                        Phone Number
+                                        <span className='text-red-500 '> *</span>
+                                    </label>
                                     <div className="flex">
                                         <div className="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center">
                                             <BsTelephoneInbound />
                                         </div>
                                         <input type="text"
                                             className="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
-                                            placeholder="+1xxxxxxxxxx" />
+                                            placeholder="+1xxxxxxxxxx"
+                                            name="phoneNumber"
+                                            value={formData.phoneNumber}
+                                            onChange={handleChange}
+                                            required
+                                        />
                                     </div>
                                 </div>
                             </div>
@@ -82,14 +142,23 @@ export default function TutorRegister() {
                             {/* Password */}
                             <div className="flex -mx-3">
                                 <div className="w-full px-3 mb-8">
-                                    <label htmlFor="" className="text-xs font-semibold px-1">Password</label>
+                                    <label
+                                        className="text-xs font-semibold px-1">
+                                        Password
+                                        <span className='text-red-500 '> *</span>
+                                    </label>
                                     <div className="flex">
                                         <div className="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center">
                                             <MdPassword />
                                         </div>
                                         <input type="password"
                                             className="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
-                                            placeholder="************" />
+                                            placeholder="************"
+                                            name="password"
+                                            value={formData.password}
+                                            onChange={handleChange}
+                                            required
+                                        />
                                     </div>
                                 </div>
                             </div>
@@ -97,7 +166,8 @@ export default function TutorRegister() {
                             <div className="flex -mx-3 mb-5">
                                 <div className="w-full">
                                     <button
-                                        className="block w-full max-w-xs mx-auto bg-indigo-500 hover:bg-indigo-700 focus:bg-indigo-700 text-white rounded-lg px-3 py-3 font-semibold">
+                                        className="block w-full max-w-xs mx-auto bg-indigo-500 hover:bg-indigo-700 focus:bg-indigo-700 text-white rounded-lg px-3 py-3 font-semibold"
+                                        type="submit">
                                         <FiLogIn className='inline mr-2 mb-1' fontSize={25} />
                                         Register
                                     </button>
@@ -115,7 +185,7 @@ export default function TutorRegister() {
                                 </div>
                             </div>
 
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>

@@ -57,14 +57,11 @@ function RegisterForm() {
         axios.post('http://localhost:9081/user/adduser', formData)
             .then((response) => {
                 window.alert("Registered successfully. Happy Learning!")
-                console.log('Form submitted successfully!');
                 navigateHome(homePath)
             })
             .catch((error) => {
-                // Handle error, if needed
                 console.error('Error submitting form:', error);
             });
-        console.log(formData)
     };
 
     return (
