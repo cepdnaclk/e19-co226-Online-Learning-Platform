@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { useNavigate } from "react-router-dom";
+
+import axios from 'axios';
 
 import { FiUser } from 'react-icons/fi';
 import { HiOutlineMail } from 'react-icons/hi';
@@ -14,6 +16,7 @@ import User from '../components/images/registerImages/user.png'
 
 function RegisterForm() {
 
+    //Navigate To Home Page
     const navigate = useNavigate();
 
     const homePath = "/"
@@ -21,6 +24,48 @@ function RegisterForm() {
     const navigateHome = (path) => {
         navigate(path);
     }
+
+    // Format the current Date : YYYY-MM-DD
+    const getCurrentDateFormatted = () => {
+        const currentDate = new Date();
+        const year = currentDate.getFullYear();
+        const month = String(currentDate.getMonth() + 1).padStart(2, '0');
+        const day = String(currentDate.getDate()).padStart(2, '0');
+
+        return `${year}-${month}-${day}`;
+    };
+
+    //Set the values
+    const [formData, setFormData] = useState({
+        firstName: '',
+        lastName: '',
+        phoneNumber: '',
+        dateOfBirth: '',
+        userEmail: '',
+        password: '',
+        dateRegistered: getCurrentDateFormatted()
+    });
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value });
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        axios.post('http://localhost:9081/user/adduser', formData)
+            .then((response) => {
+                window.alert("Registered successfully. Happy Learning!")
+                console.log('Form submitted successfully!');
+                navigateHome(homePath)
+            })
+            .catch((error) => {
+                // Handle error, if needed
+                console.error('Error submitting form:', error);
+            });
+        console.log(formData)
+    };
 
     return (
         <div className="min-w-screen min-h-screen bg-gray-900 flex items-center justify-center px-5 py-5">
@@ -34,27 +79,45 @@ function RegisterForm() {
                             <h1 className="font-bold text-3xl text-gray-900">REGISTER</h1>
                             <p>Enter your information to register</p>
                         </div>
-                        <div>
+                        <form onSubmit={handleSubmit}>
                             {/* First Name and Last Name */}
                             <div className="flex -mx-3">
                                 <div className="w-1/2 px-3 mb-3">
-                                    <label htmlFor="" className="text-xs font-semibold px-1">First Name</label>
+                                    <label htmlFor="" className="text-xs font-semibold px-1">
+                                        First Name
+                                        <span className='text-red-500 '> *</span>
+                                    </label>
                                     <div className="flex">
                                         <div className="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center">
                                             <FiUser />
                                         </div>
-                                        <input type="text" className="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
-                                            placeholder="John" />
+                                        <input
+                                            type="text"
+                                            className="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
+                                            placeholder="John"
+                                            name="firstName"
+                                            value={formData.firstName}
+                                            onChange={handleChange}
+                                            required />
                                     </div>
                                 </div>
                                 <div className="w-1/2 px-3 mb-3">
-                                    <label htmlFor="" className="text-xs font-semibold px-1">Last Name</label>
+                                    <label htmlFor="" className="text-xs font-semibold px-1">
+                                        Last Name
+                                        <span className='text-red-500 '> *</span>
+                                    </label>
                                     <div className="flex">
                                         <div className="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center">
                                             <FiUser />
                                         </div>
-                                        <input type="text" className="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
-                                            placeholder="Smith" />
+                                        <input
+                                            type="text"
+                                            className="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
+                                            name="lastName"
+                                            value={formData.lastName}
+                                            onChange={handleChange}
+                                            placeholder="Smith"
+                                            required />
                                     </div>
                                 </div>
                             </div>
@@ -62,23 +125,40 @@ function RegisterForm() {
                             {/* Phone number and Birth Date */}
                             <div className="flex -mx-3">
                                 <div className="w-1/2 px-3 mb-3">
-                                    <label htmlFor="" className="text-xs font-semibold px-1">Phone Number</label>
+                                    <label htmlFor="" className="text-xs font-semibold px-1">
+                                        Phone Number
+                                        <span className='text-red-500 '> *</span>
+                                    </label>
                                     <div className="flex">
                                         <div className="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center">
                                             <BsTelephoneInbound />
                                         </div>
-                                        <input type="text" className="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
-                                            placeholder="+1xxxxxxxxxx" />
+                                        <input
+                                            type="text"
+                                            className="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
+                                            name="phoneNumber"
+                                            value={formData.phoneNumber}
+                                            onChange={handleChange}
+                                            placeholder="+1xxxxxxxxxx"
+                                            required />
                                     </div>
                                 </div>
                                 <div className="w-1/2 px-3 mb-3">
-                                    <label htmlFor="" className="text-xs font-semibold px-1">Date of Birth</label>
+                                    <label htmlFor="" className="text-xs font-semibold px-1">
+                                        Date of Birth
+                                        <span className='text-red-500 '> *</span>
+                                    </label>
                                     <div className="flex">
                                         <div className="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center">
                                             <LiaBirthdayCakeSolid />
                                         </div>
-                                        <input type="text" className="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
-                                            placeholder="01/01/2000" />
+                                        <input
+                                            type="date"
+                                            className="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
+                                            name="dateOfBirth"
+                                            value={formData.dateOfBirth}
+                                            onChange={handleChange}
+                                            required />
                                     </div>
                                 </div>
                             </div>
@@ -86,13 +166,22 @@ function RegisterForm() {
                             {/* Email */}
                             <div className="flex -mx-3">
                                 <div className="w-full px-3 mb-2">
-                                    <label htmlFor="" className="text-xs font-semibold px-1">Email</label>
+                                    <label htmlFor="" className="text-xs font-semibold px-1">
+                                        Email
+                                        <span className='text-red-500 '> *</span>
+                                    </label>
                                     <div className="flex">
                                         <div className="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center">
                                             <HiOutlineMail />
                                         </div>
-                                        <input type="email" className="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
-                                            placeholder="johnsmith@example.com" />
+                                        <input
+                                            type="email"
+                                            className="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
+                                            name="userEmail"
+                                            value={formData.userEmail}
+                                            onChange={handleChange}
+                                            placeholder="johnsmith@example.com"
+                                            required />
                                     </div>
                                 </div>
                             </div>
@@ -100,14 +189,22 @@ function RegisterForm() {
                             {/* Password */}
                             <div className="flex -mx-3">
                                 <div className="w-full px-3 mb-8">
-                                    <label htmlFor="" className="text-xs font-semibold px-1">Password</label>
+                                    <label htmlFor="" className="text-xs font-semibold px-1">
+                                        Password
+                                        <span className='text-red-500 '> *</span>
+                                    </label>
                                     <div className="flex">
                                         <div className="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center">
                                             <MdPassword />
                                         </div>
-                                        <input type="password"
+                                        <input
+                                            type="password"
                                             className="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
-                                            placeholder="************" />
+                                            name="password"
+                                            value={formData.password}
+                                            onChange={handleChange}
+                                            placeholder="************"
+                                            required />
                                     </div>
                                 </div>
                             </div>
@@ -115,7 +212,8 @@ function RegisterForm() {
                             <div className="flex -mx-3 mb-5">
                                 <div className="w-full">
                                     <button
-                                        className="block w-full max-w-xs mx-auto bg-indigo-500 hover:bg-indigo-700 focus:bg-indigo-700 text-white rounded-lg px-3 py-3 font-semibold">
+                                        className="block w-full max-w-xs mx-auto bg-indigo-500 hover:bg-indigo-700 focus:bg-indigo-700 text-white rounded-lg px-3 py-3 font-semibold"
+                                        type="submit">
                                         <FiLogIn className='inline mr-2 mb-1' fontSize={25} />
                                         Register
                                     </button>
@@ -133,7 +231,7 @@ function RegisterForm() {
                                 </div>
                             </div>
 
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>
