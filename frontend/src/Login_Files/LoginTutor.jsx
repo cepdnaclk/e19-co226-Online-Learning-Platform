@@ -2,14 +2,13 @@ import React from 'react';
 
 import { useNavigate } from "react-router-dom";
 
-function LoginForm() {
+function LoginTutor() {
 
     const navigate = useNavigate();
 
     const homePath = "/"
-    const logTutorPath = "/logintutor"
 
-    const navigateDest = (path) => {
+    const navigateHome = (path) => {
         navigate(path);
     }
 
@@ -21,7 +20,7 @@ function LoginForm() {
                     <div className="max-w-md mx-auto">
                         <div>
                             <h1 className="text-2xl font-semibold">
-                                Log In - User
+                                Log In - Tutor
                             </h1>
                         </div>
                         <form>
@@ -35,14 +34,14 @@ function LoginForm() {
                                             name="userId"
                                             type="text"
                                             className="mb-4 peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:border-rose-600"
-                                            placeholder="User ID"
+                                            placeholder="Tutor ID"
                                             required
                                         />
                                         <label
                                             htmlFor="userId"
                                             className="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm"
                                         >
-                                            User ID
+                                            Tutor ID
                                         </label>
                                     </div>
                                     <div className="relative">
@@ -52,18 +51,16 @@ function LoginForm() {
                                             name="password"
                                             type="password"
                                             className=" peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:border-rose-600"
-                                            placeholder="User Password"
+                                            placeholder="Password"
                                             required
                                         />
                                         <label
                                             htmlFor="password"
                                             className="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm"
                                         >
-                                            User Password
+                                            Password
                                         </label>
                                     </div>
-
-                                    {/* Submit Button */}
                                     <div className="relative">
                                         <button
                                             className="mt-3 bg-blue-500 text-white rounded-md px-5 py-1 w-full hover:bg-blue-700"
@@ -71,22 +68,11 @@ function LoginForm() {
                                             Submit
                                         </button>
                                     </div>
-
-                                    {/* Back Button */}
                                     <div className="relative">
                                         <button
                                             className="bg-green-400 text-white rounded-md px-5 py-1 w-full hover:bg-green-600"
-                                            onClick={() => navigateDest(homePath)}>
-                                            Back
-                                        </button>
-                                    </div>
-
-                                    {/* Login as a Tutor button */}
-                                    <div className="relative">
-                                        <button
-                                            className="bg-yellow-500 text-white rounded-md px-5 py-1 w-full hover:bg-yellow-600"
-                                            onClick={() => navigateDest(logTutorPath)}>
-                                            Login as a Tutor
+                                            onClick={() => navigateHome(homePath)}>
+                                            Back to Home
                                         </button>
                                     </div>
                                 </div>
@@ -99,4 +85,4 @@ function LoginForm() {
     );
 }
 
-export default LoginForm;
+export default LoginTutor;
