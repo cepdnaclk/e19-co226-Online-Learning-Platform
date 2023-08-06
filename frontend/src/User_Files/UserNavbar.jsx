@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
-import Logo from "../components/images/logo.png"
+
 import { CgMenu } from 'react-icons/cg';
+import { CgLogOut } from 'react-icons/cg';
+
+import Logo from "../components/images/logo.png"
 
 function UserNavbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,13 +16,20 @@ function UserNavbar() {
         navigate(path);
     }
 
+    const homePath = "/"
+
+    const backHome = (path) => {
+        localStorage.removeItem('userId');
+        navigate(path);
+    }
+
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
 
     const NavMenus = [
-        { title: "My Courses", path: "/user" },  //Change navigation according to id number
-        { title: "Courses", path: "/user/courses" },
+        { title: "Dashboard", path: "/user/dashboard" },  //Change navigation according to id number
+        { title: "My Profile", path: "/user/profile" },
         { title: "Contact", path: "/user/contact" }
     ];
 
@@ -46,14 +56,21 @@ function UserNavbar() {
                     </ul>
                 </div>
 
-                <div
-                    className="flex items-center gap-6">
-                    {/* Profile Section with logout goes here */}
+                <div className="flex items-center gap-6">
+                    {/* Logout Button */}
+                    <button
+                        className="bg-gray-300 hover:bg-gray-400 text-gray-900 font-bold py-1 px-2 rounded inline-flex items-center"
+                        onClick={() => backHome(homePath)}>
+                        <CgLogOut fontSize={20} />
+                        <span className='pl-1'>Log Out</span>
+                    </button>
+                    {/* Small width Menu button */}
                     <span
                         onClick={toggleMenu} name={isMenuOpen ? 'close' : 'menu'} className="text-3xl cursor-pointer md:hidden">
                         <CgMenu />
                     </span>
                 </div>
+
             </nav>
         </header>
     );

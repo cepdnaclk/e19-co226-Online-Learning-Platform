@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { useNavigate } from "react-router-dom";
 
@@ -13,6 +13,35 @@ function LoginForm() {
         navigate(path);
     }
 
+    const [userId, setUserId] = useState('');
+    const [password, setPassword] = useState('');
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        try {
+            const response = await fetch('http://localhost:9081/user/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ userId, password }),
+            });
+
+            if (response.ok) {
+                // Handle successful login, e.g., redirect to dashboard
+                alert('Login successful!');
+                localStorage.setItem('userId', userId);
+                navigate("/user/dashboard")
+            } else {
+                // Handle login failure, e.g., show error message
+                alert('Login failed. Please check your credentials.');
+            }
+        } catch (error) {
+            console.error('Error during login:', error);
+        }
+    };
+
     return (
         <div className="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12">
             <div className="relative py-3 sm:max-w-xl sm:mx-auto">
@@ -24,7 +53,7 @@ function LoginForm() {
                                 Log In - User
                             </h1>
                         </div>
-                        <form>
+                        <form onSubmit={handleSubmit}>
                             <div className="divide-y divide-gray-200">
 
                                 <div className="py-8 text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7">
@@ -37,6 +66,8 @@ function LoginForm() {
                                             className="mb-4 peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:border-rose-600"
                                             placeholder="User ID"
                                             required
+                                            onChange={(e) => setUserId(e.target.value)}
+                                            value={userId}
                                         />
                                         <label
                                             htmlFor="userId"
@@ -54,6 +85,8 @@ function LoginForm() {
                                             className=" peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:border-rose-600"
                                             placeholder="User Password"
                                             required
+                                            value={password}
+                                            onChange={(e) => setPassword(e.target.value)}
                                         />
                                         <label
                                             htmlFor="password"

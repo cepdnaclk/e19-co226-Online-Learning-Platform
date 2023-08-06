@@ -6,8 +6,8 @@ import About from './HomePage_Files/About'
 import Services from './HomePage_Files/Services'
 import Contact from './HomePage_Files/Contact'
 
-import User from './User_Files/User';
-import UserCourses from './User_Files/UserCourses';
+import UserDashboard from './User_Files/UserDashboard';
+import UserProfile from './User_Files/UserProfile';
 import UserContact from './User_Files/UserContact';
 
 import Tutor from './Tutor_Files/Tutor';
@@ -31,8 +31,8 @@ function App() {
 
       {/* <Route path="/user/dashboard/:id" element={<UserDashboard />} /> */}
       {/* User */}
-      <Route path="/user" element={<User />} />
-      <Route path="/user/courses" element={<UserCourses />} />
+      <Route path="/user/dashboard" element={<UserDashboard />} />
+      <Route path="/user/profile" element={<UserProfile />} />
       <Route path="/user/contact" element={<UserContact />} />
 
       {/* Tutor */}

@@ -5,9 +5,11 @@ import com.learnedge.backend.entity.User;
 import java.util.List;
 
 public interface UserService {
-    public User saveUser(User user);
+    User saveUser(User user);
 
-    public List<User> fetchUsersList();
+    List<User> fetchUsersList();
 
-    public User fetchUserById(Long userId);
+    User fetchUserById(Long userId);
+
+    boolean authenticateUser(Long userId, String password);
 }

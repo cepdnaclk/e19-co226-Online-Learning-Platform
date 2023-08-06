@@ -1,8 +1,11 @@
 package com.learnedge.backend.controller;
 
 import com.learnedge.backend.entity.User;
+import com.learnedge.backend.request.LoginRequest;
 import com.learnedge.backend.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -13,11 +16,7 @@ import java.util.List;
 public class UserController {
     @Autowired   //Dependancy Injection
     private UserService userService;
-
-    @GetMapping("/profile")
-    public String Hello(){
-        return "Profile is under API development process";
-    }
+    
     @PostMapping("/adduser")  //To add a user to the database table
     public User saveUser(@RequestBody User user){
         return userService.saveUser(user);
@@ -30,4 +29,19 @@ public class UserController {
     public User fetchUserById(@PathVariable("id") Long userId ){
         return userService.fetchUserById(userId);
     }
-}
+
+    @PostMapping("/login")
+    public ResponseEntity<String> login(@RequestBody LoginRequest loginRequest) {
+        Long userId = loginRequest.getUserId();
+        String password = loginRequest.getPassword();
+
+        if (userService.authenticateUser(userId, password)) {
+            return ResponseEntity.ok("Login successful");
+        } else {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials");
+        }
+    }
+
+
+
+        }
