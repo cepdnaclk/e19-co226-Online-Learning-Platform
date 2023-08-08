@@ -7,6 +7,7 @@ import Services from './HomePage_Files/Services'
 import Contact from './HomePage_Files/Contact'
 
 import UserDashboard from './User_Files/UserDashboard';
+import UserAllCourses from './User_Files/UserAllCourses';
 import UserProfile from './User_Files/UserProfile';
 import UserContact from './User_Files/UserContact';
 
@@ -36,6 +37,7 @@ function App() {
       <Route path="/user/dashboard" element={<UserDashboard />} />
       <Route path="/user/profile" element={<UserProfile />} />
       <Route path="/user/contact" element={<UserContact />} />
+      <Route path="/user/allcourses" element={<UserAllCourses />} />
 
       {/* Tutor */}
       <Route path="/tutor" element={<Tutor />} />

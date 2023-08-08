@@ -29,6 +29,7 @@ function UserNavbar() {
 
     const NavMenus = [
         { title: "Dashboard", path: "/user/dashboard" },  //Change navigation according to id number
+        { title: "All Courses", path: "/user/allcourses" },
         { title: "My Profile", path: "/user/profile" },
         { title: "Contact", path: "/user/contact" }
     ];
