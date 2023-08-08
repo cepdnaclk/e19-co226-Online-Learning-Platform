@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Footer from "../Navbar_Files/Footer";
 
-function Course() {
+function MachineLearning() {
    return (
       <>
       <div className='pb-20 py-5 select-none'>
@@ -67,4 +67,4 @@ function Course() {
    )
 }
 
-export default Course
+export default MachineLearning

@@ -20,7 +20,8 @@ import RegisterForm from './Login_Files/RegisterForm'
 import TutorRegister from './Login_Files/TutorRegister';
 import LoginTutor from './Login_Files/LoginTutor';
 
-import Course from './Course_Files/Course';
+import MachineLearning from './Course_Files/machineLearning';
+import PythonProgramming from './Course_Files/pythonProgramming';
 
 function App() {
 
@@ -51,7 +52,8 @@ function App() {
       <Route path="/regtutor" element={<TutorRegister />} />
 
       {/* Course */}
-      <Route path="/course" element={<Course />} />
+      <Route path="/machineLearning" element={<MachineLearning />} />
+      <Route path="/pythonProgramming" element={<PythonProgramming />} />
     </Routes>
   )
 }
