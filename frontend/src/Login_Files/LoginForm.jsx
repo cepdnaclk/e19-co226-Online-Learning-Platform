@@ -13,7 +13,7 @@ function LoginForm() {
         navigate(path);
     }
 
-    const [userId, setUserId] = useState('');
+    const [userEmail, setUserEmail] = useState('');
     const [password, setPassword] = useState('');
 
     const handleSubmit = async (e) => {
@@ -25,13 +25,13 @@ function LoginForm() {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ userId, password }),
+                body: JSON.stringify({ userEmail, password }),
             });
 
             if (response.ok) {
                 // Handle successful login, e.g., redirect to dashboard
                 alert('Login successful!');
-                localStorage.setItem('userId', userId);
+                localStorage.setItem('userEmail', userEmail);
                 navigate("/user/dashboard")
             } else {
                 // Handle login failure, e.g., show error message
@@ -60,20 +60,20 @@ function LoginForm() {
                                     <div className="relative">
                                         <input
                                             autoComplete="off"
-                                            id="userId"
-                                            name="userId"
-                                            type="text"
+                                            id="userEmail"
+                                            name="userEmail"
+                                            type="email"
                                             className="mb-4 peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:border-rose-600"
                                             placeholder="User ID"
                                             required
-                                            onChange={(e) => setUserId(e.target.value)}
-                                            value={userId}
+                                            onChange={(e) => setUserEmail(e.target.value)}
+                                            value={userEmail}
                                         />
                                         <label
-                                            htmlFor="userId"
+                                            htmlFor="userEmail"
                                             className="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm"
                                         >
-                                            User ID
+                                            User Email
                                         </label>
                                     </div>
                                     <div className="relative">

@@ -30,12 +30,17 @@ public class UserController {
         return userService.fetchUserById(userId);
     }
 
+    @GetMapping("/email/{email}")
+    public User fetchUserByEmail(@PathVariable("email") String email ){
+        return userService.fetchUserByEmail(email);
+    }
+
     @PostMapping("/login")
     public ResponseEntity<String> login(@RequestBody LoginRequest loginRequest) {
-        Long userId = loginRequest.getUserId();
+        String userEmail = loginRequest.getUserEmail();
         String password = loginRequest.getPassword();
 
-        if (userService.authenticateUser(userId, password)) {
+        if (userService.authenticateUser(userEmail, password)) {
             return ResponseEntity.ok("Login successful");
         } else {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials");

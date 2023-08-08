@@ -6,7 +6,7 @@ import Footer2 from "../Navbar_Files/Footer2";
 
 function UserDashboard() {
 
-    const userId = localStorage.getItem('userId');
+    const userEmail = localStorage.getItem('userEmail');
 
     const [userDetails, setUserDetails] = useState([])
 
@@ -17,9 +17,9 @@ function UserDashboard() {
 
     const loadDetails = async () => {
         try {
-            const url = `http://localhost:9081/user/${userId}`;
+            const url = `http://localhost:9081/user/email/${userEmail}`;
             const user = await axios.get(url);
-            console.log(user.data);
+            //console.log(user.data);
             setUserDetails(user.data);
         }
         catch (error) {

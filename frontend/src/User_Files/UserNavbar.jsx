@@ -19,7 +19,7 @@ function UserNavbar() {
     const homePath = "/"
 
     const backHome = (path) => {
-        localStorage.removeItem('userId');
+        localStorage.removeItem('userEmail');
         navigate(path);
     }
 

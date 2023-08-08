@@ -11,5 +11,7 @@ public interface UserService {
 
     User fetchUserById(Long userId);
 
-    boolean authenticateUser(Long userId, String password);
+    boolean authenticateUser(String userEmail, String password);
+
+    User fetchUserByEmail(String email);
 }
