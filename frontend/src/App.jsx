@@ -19,6 +19,8 @@ import RegisterForm from './Login_Files/RegisterForm'
 import TutorRegister from './Login_Files/TutorRegister';
 import LoginTutor from './Login_Files/LoginTutor';
 
+import Course from './Course_Files/Course';
+
 function App() {
 
   return (
@@ -45,6 +47,9 @@ function App() {
       <Route path="/logintutor" element={<LoginTutor />} />
       <Route path="/register" element={<RegisterForm />} />
       <Route path="/regtutor" element={<TutorRegister />} />
+
+      {/* Course */}
+      <Route path="/course" element={<Course />} />
     </Routes>
   )
 }
