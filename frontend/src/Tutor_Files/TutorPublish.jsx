@@ -58,7 +58,7 @@ function TutorPublish() {
 
         axios.post('http://localhost:9081/course/addcourse', formData)
             .then((response) => {
-                console.log(formData);
+                //console.log(formData);
                 window.alert("Course Created Successfully!")
                 navigate("/tutor/dashboard")
             })

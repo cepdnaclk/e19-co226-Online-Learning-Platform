@@ -23,7 +23,7 @@ public class Course {
 
     @ManyToOne(
             cascade = CascadeType.MERGE,
-            fetch = FetchType.LAZY
+            fetch = FetchType.EAGER   //IMPORTANT
     )
     @JoinColumn(
             name = "tutorId",

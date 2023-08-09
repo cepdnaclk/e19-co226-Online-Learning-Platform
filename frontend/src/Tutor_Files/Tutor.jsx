@@ -18,7 +18,7 @@ function Tutor() {
         try {
             const url = `http://localhost:9081/tutor/email/${tutorEmail}`;
             const tutor = await axios.get(url);
-            console.log(tutor.data);
+            //console.log(tutor.data);
             setTutorDetails(tutor.data);
         }
         catch (error) {

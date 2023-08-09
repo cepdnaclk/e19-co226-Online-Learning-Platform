@@ -31,7 +31,7 @@ function Homepage() {
     const loadCourses = async () => {
         try {
             const listOfCourses = await axios.get("http://localhost:9081/course/getcourses");
-            // console.log(listOfCourses.data);
+            //console.log(listOfCourses.data);
 
             const mappedCourses = listOfCourses.data.map((course) => {
 
