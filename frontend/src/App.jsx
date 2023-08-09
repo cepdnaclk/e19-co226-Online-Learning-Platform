@@ -41,7 +41,7 @@ function App() {
       <Route path="/user/allcourses" element={<UserAllCourses />} />
 
       {/* Tutor */}
-      <Route path="/tutor" element={<Tutor />} />
+      <Route path="/tutor/dashboard" element={<Tutor />} />
       <Route path="/tutor/publish" element={<TutorPublish />} />
       <Route path="/tutor/contact" element={<TutorContact />} />
 

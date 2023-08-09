@@ -15,5 +15,15 @@ public class TutorServiceImpl implements TutorService{
         return tutorRepository.save(tutor);
     }
 
+    @Override
+    public Tutor fetchTutorByEmail(String email) {
+        return tutorRepository.findByTutorEmail(email);
+    }
+
+    @Override
+    public boolean authenticateUser(String tutorEmail, String password) {
+        Tutor tutor = tutorRepository.findByTutorEmail(tutorEmail);
+        return tutor != null && tutor.getPassword().equals(password);
+    }
 
 }

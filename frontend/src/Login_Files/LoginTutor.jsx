@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { useNavigate } from "react-router-dom";
 
@@ -12,6 +12,34 @@ function LoginTutor() {
         navigate(path);
     }
 
+    const [tutorEmail, setTutorEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        try {
+            const response = await fetch('http://localhost:9081/tutor/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ tutorEmail, password }),
+            });
+
+            if (response.ok) {
+                alert('Login successful!');
+                localStorage.setItem('tutorEmail', tutorEmail);
+                navigate("/tutor/dashboard")
+            } else {
+                // Handle login failure, e.g., show error message
+                alert('Login failed. Please check your credentials.');
+            }
+        } catch (error) {
+            console.error('Error during login:', error);
+        }
+    };
+
     return (
         <div className="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12">
             <div className="relative py-3 sm:max-w-xl sm:mx-auto">
@@ -23,7 +51,7 @@ function LoginTutor() {
                                 Log In - Tutor
                             </h1>
                         </div>
-                        <form>
+                        <form onSubmit={handleSubmit}>
                             <div className="divide-y divide-gray-200">
 
                                 <div className="py-8 text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7">
@@ -35,6 +63,8 @@ function LoginTutor() {
                                             type="text"
                                             className="mb-4 peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:border-rose-600"
                                             placeholder="Tutor ID"
+                                            value={tutorEmail}
+                                            onChange={(e) => setTutorEmail(e.target.value)}
                                             required
                                         />
                                         <label
@@ -52,6 +82,8 @@ function LoginTutor() {
                                             type="password"
                                             className=" peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:border-rose-600"
                                             placeholder="Password"
+                                            value={password}
+                                            onChange={(e) => setPassword(e.target.value)}
                                             required
                                         />
                                         <label
@@ -61,6 +93,8 @@ function LoginTutor() {
                                             Password
                                         </label>
                                     </div>
+
+                                    {/* Submit Button */}
                                     <div className="relative">
                                         <button
                                             className="mt-3 bg-blue-500 text-white rounded-md px-5 py-1 w-full hover:bg-blue-700"
@@ -68,6 +102,8 @@ function LoginTutor() {
                                             Submit
                                         </button>
                                     </div>
+
+                                    {/* Back To Home Button */}
                                     <div className="relative">
                                         <button
                                             className="bg-green-400 text-white rounded-md px-5 py-1 w-full hover:bg-green-600"
@@ -75,6 +111,7 @@ function LoginTutor() {
                                             Back to Home
                                         </button>
                                     </div>
+
                                 </div>
                             </div>
                         </form>

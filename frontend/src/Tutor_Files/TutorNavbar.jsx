@@ -18,7 +18,7 @@ function TutorNavbar() {
     };
 
     const NavMenus = [
-        { title: "Courses", path: "/tutor" },  //Change navigation according to id number
+        { title: "My Courses", path: "/tutor/dashboard" },  //Change navigation according to id number
         { title: "Publish", path: "/tutor/publish" },
         { title: "Contact", path: "/tutor/contact" }
     ];
