@@ -4,6 +4,8 @@ import axios from "axios";
 import UserNavbar from "./UserNavbar";
 import Footer2 from "../Navbar_Files/Footer2";
 
+import { FaUserGraduate } from 'react-icons/fa';
+
 function UserProfile() {
 
     const userEmail = localStorage.getItem('userEmail');
@@ -30,17 +32,70 @@ function UserProfile() {
     return (
         <>
             <UserNavbar />
-            <div className='pb-20 p-5 select-none'>
+            <div className='pb-20 p-5 select-none bg-stone-200'>
                 {/* content goes inside this div */}
-                <h1 className='text-2xl text-center'>My Profile</h1>
+                <h1 className='text-2xl text-center font-bold'>My Profile</h1>
 
-                <h1>Your User ID is: {userDetails.userId}</h1>
+                {/* <h1>Your User ID is: {userDetails.userId}</h1>
                 <h1>First Name: {userDetails.firstName}</h1>
                 <h1>Last Name: {userDetails.lastName}</h1>
                 <h1>Phone Number: {userDetails.phoneNumber}</h1>
                 <h1>Email: {userDetails.userEmail}</h1>
                 <h1>Date Of Birth: {userDetails.dateOfBirth}</h1>
-                <h1>Date Registered to LearnEdge: {userDetails.dateRegistered}</h1>
+                <h1>Date Registered to LearnEdge: {userDetails.dateRegistered}</h1> */}
+
+                <section className="bg-blueGray-50">
+                    <div className="mt-8 w-full lg:w-6/12 mx-auto">
+                        <div className="relative flex flex-col min-w-0 break-words bg-white w-full shadow-xl rounded-lg ">
+                            <div className="px-5 pb-5">
+
+                                <div className="flex flex-wrap justify-center">
+
+                                    <div className="w-full flex justify-center pt-5">
+                                        <div className="relative p-4 rounded-full" >
+                                            <FaUserGraduate fontSize={100} />
+                                        </div>
+                                    </div>
+
+                                    <div className="w-full px-4 text-center ">
+                                        <div className="flex justify-center lg:pt-2 pt-4">
+                                            <h3 className="text-4xl font-semibold leading-normal text-blueGray-700 tracking-wide">
+                                                {userDetails.firstName + " " + userDetails.lastName}
+                                            </h3>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div className="mt-2 pl-5">
+                                    <h3 className="text-xl pb-4">
+                                        User ID: {userDetails.userId}
+                                    </h3>
+                                    <h3 className="text-xl pb-4">
+                                        Phone Number: {userDetails.phoneNumber}
+                                    </h3>
+                                    <h3 className="text-xl pb-4">
+                                        E-mail: {userDetails.userEmail}
+                                    </h3>
+                                    <h3 className="text-xl pb-4">
+                                        Birth Date: {userDetails.dateOfBirth}
+                                    </h3>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+
+
+
+
+
+
+
+
 
             </div>
             <Footer2 />
