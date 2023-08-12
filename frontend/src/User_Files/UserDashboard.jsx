@@ -30,7 +30,7 @@ function UserDashboard() {
     //Take the User Details from backend
     useEffect(() => {
         loadUserDetails();
-        loadRegCourses();
+
     }, [])
 
     const loadUserDetails = async () => {
@@ -40,17 +40,16 @@ function UserDashboard() {
 
             setUserDetails(user.data);
             localStorage.setItem('userID', user.data.userId);
-
+            loadRegCourses(user.data.userId);
         }
         catch (error) {
             console.error("Error fetching User Details:", error);
         }
     };
 
-    const loadRegCourses = async () => {
+    const loadRegCourses = async (userId) => {
         try {
-            const userID = localStorage.getItem('userID');
-            const listOfRegCourses = await axios.get(`http://localhost:9081/user/regCourses/${userID}`);
+            const listOfRegCourses = await axios.get(`http://localhost:9081/user/regCourses/${userId}`);
 
             const mappedCourses = listOfRegCourses.data.map((course) => {
 
