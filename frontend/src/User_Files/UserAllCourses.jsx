@@ -66,7 +66,7 @@ function UserAllCourses() {
                     courseName: course.courseName,
                     category: course.courseCategory,
                     price: course.price,
-                    buttonText: "View",
+                    buttonText: "Enroll",
                     imageSrc: imageSource
                 };
             });
@@ -84,23 +84,18 @@ function UserAllCourses() {
             <UserNavbar />
             <div className='pb-20 p-5 select-none grid grid-cols-4 gap-4'>
                 {/* content goes inside this div */}
-
-                {courseList.map((course, index) => (
-                    <div className='p-2' key={index}>
-                        <Card
-                            imageSrc={course.imageSrc}
-                            title={course.courseName}
-                            subTitle={course.category}
-                            greenText={course.price}
-                            buttonText={course.buttonText}
-                        />
-                    </div>
-                ))}
-
-
-
-
-
+                {
+                    courseList.map((course, index) => (
+                        <div className='p-2' key={index}>
+                            <Card
+                                imageSrc={course.imageSrc}
+                                title={course.courseName}
+                                subTitle={course.category}
+                                greenText={course.price}
+                                buttonText={course.buttonText}
+                            />
+                        </div>
+                    ))}
 
                 {/* Course 1 card*/}
                 {/* <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
@@ -138,9 +133,6 @@ function UserAllCourses() {
                         </div>
                     </div>
                 </div> */}
-
-
-
 
             </div>
             <Footer2 />

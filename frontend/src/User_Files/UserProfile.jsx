@@ -68,34 +68,66 @@ function UserProfile() {
                                 </div>
 
                                 <div className="mt-2 pl-5">
-                                    <h3 className="text-xl pb-4">
-                                        User ID: {userDetails.userId}
+
+                                    <h3 className="text-xl pb-4 ">
+
+                                        <span className="font-bold">
+                                            🆔 User ID :
+                                        </span>
+
+                                        <span className="text-cyan-800">
+                                            <span> </span>
+                                            {userDetails.userId}
+                                        </span>
+
                                     </h3>
+
                                     <h3 className="text-xl pb-4">
-                                        Phone Number: {userDetails.phoneNumber}
+
+                                        <span className="font-bold">
+                                            📞 Phone Number :
+                                        </span>
+
+                                        <span className="text-cyan-800">
+                                            <span> </span>
+                                            {userDetails.phoneNumber}
+                                        </span>
+
                                     </h3>
+
                                     <h3 className="text-xl pb-4">
-                                        E-mail: {userDetails.userEmail}
+
+                                        <span className="font-bold">
+                                            📧 E-mail :
+                                        </span>
+
+                                        <span className="text-cyan-800">
+                                            <span> </span>
+                                            {userDetails.userEmail}
+                                        </span>
+
                                     </h3>
+
                                     <h3 className="text-xl pb-4">
-                                        Birth Date: {userDetails.dateOfBirth}
+
+                                        <span className="font-bold">
+                                            🎂 Birth Date :
+                                        </span>
+
+                                        <span className="text-cyan-800">
+                                            <span> </span>
+                                            {userDetails.dateOfBirth}
+                                        </span>
+
                                     </h3>
+
                                 </div>
 
-
                             </div>
+
                         </div>
                     </div>
-
                 </section>
-
-
-
-
-
-
-
-
 
             </div>
             <Footer2 />
