@@ -28,6 +28,7 @@ const SlickSlider = ({ listOfItems }) => {
                             category={course.category}
                             price={course.price}
                             buttonText={course.buttonText}
+                            courseID={course.courseID}
                         />
                     </div>
                 ))}

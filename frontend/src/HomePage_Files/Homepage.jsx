@@ -21,11 +21,13 @@ function Homepage() {
     }, [])
 
     const loadCourses = async () => {
+
         try {
             const listOfCourses = await axios.get("http://localhost:9081/course/getcourses");
 
             const mappedCourses = listOfCourses.data.map((course) => {
                 return {
+                    courseID:course.courseId,
                     courseName: course.courseName,
                     category: course.courseCategory,
                     price: course.price,
@@ -33,6 +35,7 @@ function Homepage() {
                 };
             });
 
+            //console.log(courseList)
             setCourses(mappedCourses);
 
         }

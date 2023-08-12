@@ -7,7 +7,6 @@ import { useEffect } from "react";
 import UserNavbar from "./UserNavbar";
 import Footer2 from "../Navbar_Files/Footer2";
 
-
 import Card from '../components/Card';
 
 function UserAllCourses() {
@@ -29,6 +28,7 @@ function UserAllCourses() {
 
             const mappedCourses = listOfNotRegCourses.data.map((course) => {
                 return {
+                    courseID:course.courseId,
                     courseName: course.courseName,
                     category: course.courseCategory,
                     price: course.price,
@@ -57,6 +57,7 @@ function UserAllCourses() {
                                 category={course.category}
                                 price={course.price}
                                 buttonText={course.buttonText}
+                                courseID={course.courseID}
                             />
                         </div>
                     ))}
