@@ -21,4 +21,13 @@ public class CourseServiceImpl implements CourseService{
     public Course saveCourse(Course course) {
         return courseRepository.save(course);
     }
+    @Override
+    public List <Course> findUnenrolledCourses(Long userId){
+        return courseRepository.findUnenrolledCoursesByUserId(userId);
+    }
+
+    @Override
+    public List <Course> findEnrolledCourses(Long userId){
+        return courseRepository.findEnrolledCoursesByUserId(userId);
+    }
 }

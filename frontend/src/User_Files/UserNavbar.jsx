@@ -20,6 +20,7 @@ function UserNavbar() {
 
     const backHome = (path) => {
         localStorage.removeItem('userEmail');
+        localStorage.removeItem('userID');
         navigate(path);
     }
 
@@ -29,7 +30,7 @@ function UserNavbar() {
 
     const NavMenus = [
         { title: "Dashboard", path: "/user/dashboard" },  //Change navigation according to id number
-        { title: "All Courses", path: "/user/allcourses" },
+        { title: "Enroll", path: "/user/allcourses" },
         { title: "My Profile", path: "/user/profile" },
         { title: "Contact", path: "/user/contact" }
     ];

@@ -19,7 +19,7 @@ function TutorNavbar() {
     const homePath = "/"
 
     const backHome = (path) => {
-        localStorage.removeItem('userEmail');
+        localStorage.removeItem('tutorEmail');
         navigate(path);
     }
 
