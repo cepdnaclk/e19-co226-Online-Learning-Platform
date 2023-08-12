@@ -1,20 +1,20 @@
 import React from "react";
 
-import TutorNavbar from "./TutorNavbar";
-import Footer2 from "../Navbar_Files/Footer2";
+import HomepageNavbar from "./HomepageNavbar";
+import Footer from "../Navbar_Files/Footer";
 
 import Contact from "../components/Contact";
 
-function TutorContact() {
+function HomeContact() {
   return (
     <>
-      <TutorNavbar />
+      <HomepageNavbar />
       <div className="pb-20 p-5 select-none">
         <Contact />
       </div>
-      <Footer2 />
+      <Footer />
     </>
   );
 }
 
-export default TutorContact;
+export default HomeContact;

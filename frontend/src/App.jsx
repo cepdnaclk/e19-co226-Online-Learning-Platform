@@ -1,39 +1,37 @@
-import React, { useState, useEffect } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import React from "react";
+import {Route, Routes} from "react-router-dom";
 
-import Homepage from './HomePage_Files/Homepage';
-import About from './HomePage_Files/About'
-import Services from './HomePage_Files/Services'
-import Contact from './HomePage_Files/Contact'
+import Homepage from "./HomePage_Files/Homepage";
+import About from "./HomePage_Files/About";
+import Services from "./HomePage_Files/Services";
+import HomeContact from "./HomePage_Files/HomeContact";
 
-import UserDashboard from './User_Files/UserDashboard';
-import UserAllCourses from './User_Files/UserAllCourses';
-import UserProfile from './User_Files/UserProfile';
-import UserContact from './User_Files/UserContact';
+import UserDashboard from "./User_Files/UserDashboard";
+import UserAllCourses from "./User_Files/UserAllCourses";
+import UserProfile from "./User_Files/UserProfile";
+import UserContact from "./User_Files/UserContact";
 
-import Tutor from './Tutor_Files/Tutor';
-import TutorPublish from './Tutor_Files/TutorPublish'
-import TutorContact from './Tutor_Files/TutorContact';
+import Tutor from "./Tutor_Files/Tutor";
+import TutorPublish from "./Tutor_Files/TutorPublish";
+import TutorContact from "./Tutor_Files/TutorContact";
 
-import LoginForm from './Login_Files/LoginForm';
-import RegisterForm from './Login_Files/RegisterForm'
-import TutorRegister from './Login_Files/TutorRegister';
-import LoginTutor from './Login_Files/LoginTutor';
+import LoginForm from "./Login_Files/LoginForm";
+import RegisterForm from "./Login_Files/RegisterForm";
+import TutorRegister from "./Login_Files/TutorRegister";
+import LoginTutor from "./Login_Files/LoginTutor";
 
-import MachineLearning from './Course_Files/machineLearning';
-import PythonProgramming from './Course_Files/pythonProgramming';
+import MachineLearning from "./Course_Files/machineLearning";
+import PythonProgramming from "./Course_Files/pythonProgramming";
 
 function App() {
-
   return (
     <Routes>
       {/* HomePage */}
       <Route path="/" element={<Homepage />} />
       <Route path="/about" element={<About />} />
       <Route path="/services" element={<Services />} />
-      <Route path="/contact" element={<Contact />} />
+      <Route path="/contact" element={<HomeContact />} />
 
-      {/* <Route path="/user/dashboard/:id" element={<UserDashboard />} /> */}
       {/* User */}
       <Route path="/user/dashboard" element={<UserDashboard />} />
       <Route path="/user/profile" element={<UserProfile />} />
@@ -55,7 +53,7 @@ function App() {
       <Route path="/machineLearning" element={<MachineLearning />} />
       <Route path="/pythonProgramming" element={<PythonProgramming />} />
     </Routes>
-  )
+  );
 }
 
-export default App
+export default App;
