@@ -24,10 +24,9 @@ const SlickSlider = ({ listOfItems }) => {
                 {listOfItems.map((course, index) => (
                     <div className='p-2' key={index}>
                         <Card
-                            imageSrc={course.imageSrc}
-                            title={course.courseName}
-                            subTitle={course.category}
-                            greenText={course.price}
+                            name={course.courseName}
+                            category={course.category}
+                            price={course.price}
                             buttonText={course.buttonText}
                         />
                     </div>

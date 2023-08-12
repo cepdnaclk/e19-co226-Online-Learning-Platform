@@ -1,27 +1,19 @@
 import React from "react";
 import axios from "axios";
+
 import { useState } from "react";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+
 import HomepageNavbar from "./HomepageNavbar";
 import Footer from "../Navbar_Files/Footer";
 
 import ImageSlider from "./ImageSilder";
 import SlickSlider from "../components/SlickSlider";
 
-//Import Images
-import generalImage from '../components/images/courseImages/default.jpg'  //Image when category cannot be identified
-import ProgrammingImage from '../components/images/courseImages/programming.jpg'
-import aiImage from '../components/images/courseImages/ai.jpg'
-import LawImage from '../components/images/courseImages/law.jpg'
-import MachineLearning from '../components/images/courseImages/machineLearning.jpg'
-import WebImage from '../components/images/courseImages/web.jpg'
-import HistoryImage from '../components/images/courseImages/history.jpg'
-
 function Homepage() {
 
     //Set the Courses List
-
     const [courseList, setCourses] = useState([])
 
     useEffect(() => {
@@ -31,42 +23,13 @@ function Homepage() {
     const loadCourses = async () => {
         try {
             const listOfCourses = await axios.get("http://localhost:9081/course/getcourses");
-            //console.log(listOfCourses.data);
 
             const mappedCourses = listOfCourses.data.map((course) => {
-
-                //Change image based on the course category
-                let imageSource;
-                switch (course.courseCategory) {
-                    case "Programming":
-                        imageSource = ProgrammingImage;
-                        break;
-                    case "Artificial Intelligence":
-                        imageSource = aiImage;
-                        break;
-                    case "History":
-                        imageSource = HistoryImage;
-                        break;
-                    case "Machine Learning":
-                        imageSource = MachineLearning;
-                        break;
-                    case "Law":
-                        imageSource = LawImage;
-                        break;
-                    case "Web Development":
-                        imageSource = WebImage;
-                        break;
-                    default:
-                        imageSource = generalImage;
-                        break;
-                }
-
                 return {
                     courseName: course.courseName,
                     category: course.courseCategory,
                     price: course.price,
                     buttonText: "View",
-                    imageSrc: imageSource
                 };
             });
 

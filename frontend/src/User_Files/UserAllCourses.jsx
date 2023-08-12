@@ -7,13 +7,6 @@ import { useEffect } from "react";
 import UserNavbar from "./UserNavbar";
 import Footer2 from "../Navbar_Files/Footer2";
 
-import generalImage from '../components/images/courseImages/default.jpg'  //Image when category cannot be identified
-import ProgrammingImage from '../components/images/courseImages/programming.jpg'
-import aiImage from '../components/images/courseImages/ai.jpg'
-import LawImage from '../components/images/courseImages/law.jpg'
-import MachineLearning from '../components/images/courseImages/machineLearning.jpg'
-import WebImage from '../components/images/courseImages/web.jpg'
-import HistoryImage from '../components/images/courseImages/history.jpg'
 
 import Card from '../components/Card';
 
@@ -35,39 +28,11 @@ function UserAllCourses() {
             const listOfNotRegCourses = await axios.get(`http://localhost:9081/user/notRegCourses/${userID}`);
 
             const mappedCourses = listOfNotRegCourses.data.map((course) => {
-
-                //Change image based on the course category
-                let imageSource;
-                switch (course.courseCategory) {
-                    case "Programming":
-                        imageSource = ProgrammingImage;
-                        break;
-                    case "Artificial Intelligence":
-                        imageSource = aiImage;
-                        break;
-                    case "History":
-                        imageSource = HistoryImage;
-                        break;
-                    case "Machine Learning":
-                        imageSource = MachineLearning;
-                        break;
-                    case "Law":
-                        imageSource = LawImage;
-                        break;
-                    case "Web Development":
-                        imageSource = WebImage;
-                        break;
-                    default:
-                        imageSource = generalImage;
-                        break;
-                }
-
                 return {
                     courseName: course.courseName,
                     category: course.courseCategory,
                     price: course.price,
                     buttonText: "Enroll",
-                    imageSrc: imageSource
                 };
             });
 
@@ -88,10 +53,9 @@ function UserAllCourses() {
                     courseList.map((course, index) => (
                         <div className='p-2' key={index}>
                             <Card
-                                imageSrc={course.imageSrc}
-                                title={course.courseName}
-                                subTitle={course.category}
-                                greenText={course.price}
+                                name={course.courseName}
+                                category={course.category}
+                                price={course.price}
                                 buttonText={course.buttonText}
                             />
                         </div>
