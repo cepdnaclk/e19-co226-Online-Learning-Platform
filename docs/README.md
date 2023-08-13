@@ -19,10 +19,10 @@ title: LearnEdge
 
 ## Table of Contents
 1. [Introduction](#introduction)
-2. [Data Flow](#data-flow)
-3. [ER Diagram](#er-diagram)
-4. [Relational Mapping](#relational-mapping)
-5. [Tech Stack](#tech-stack)
+2. [ER Diagram](#er-diagram)
+3. [Relational Mapping](#relational-mapping)
+4. [Tech Stack](#tech-stack)
+5. [User Interface](#user-interface)
 6. [Links](#links)
 
 ---
@@ -37,16 +37,11 @@ Traditional education often presents barriers to learning, such as limited acces
 ### Solution 💡
 Our online learning platform offers a revolutionary solution to the drawbacks of traditional education. By providing a vast library of courses spanning various disciplines, learners can pick subjects that genuinely interest them and learn at their own pace. The platform also features interactive elements, including discussion forums, assignments, fostering a dynamic learning community. Additionally, our affordable pricing model ensures that cost is not a barrier to obtaining valuable knowledge and skills. Through cutting-edge technology and a dedication to excellence, we are redefining the future of learning, empowering learners to shape their educational journey according to their unique needs and aspirations.
 
-## Data Flow
-
 ## ER Diagram
 <img src="https://github.com/cepdnaclk/e19-co226-Online-Learning-Platform/assets/115539769/6eb844b1-1fe7-4e11-ab21-2d2ffa1c825f" />
 
 ## Relational Mapping
 <img src="https://github.com/cepdnaclk/e19-co226-Online-Learning-Platform/assets/115540884/f262eeec-3669-463e-b91f-311b2e929457"/>
-
-
-## Data Flow
 
 ## Tech Stack
 Add-image
@@ -54,6 +49,8 @@ Add-image
 
 ### Back End
 <img src="https://github.com/cepdnaclk/e19-co226-Online-Learning-Platform/assets/115539769/ea614eb1-698f-4089-9148-f1010d3e7758" width=300/>
+
+## User Interface
 
 ## Links
 - [Project Repository](https://github.com/cepdnaclk/{{ page.repository-name }}){:target="_blank"}
