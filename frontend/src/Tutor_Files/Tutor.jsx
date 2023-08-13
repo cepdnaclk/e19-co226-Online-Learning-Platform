@@ -45,7 +45,7 @@ function Tutor() {
                 return {
                     courseName: e.courseName,
                     category: e.courseCategory,
-                    description: "e.courseDescription",
+                    description: e.courseDescription,
                     price: e.price,
                     courseID: e.courseId,
                 };

@@ -13,13 +13,15 @@ import lombok.NoArgsConstructor;
 @Builder
 public class Course {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long courseId;
 
     private String courseName;
     private String courseCategory;
     //Programming, Artificial Intelligence, History, Machine Learning, Law, Web Development, other(default) --> Update this with more categories
     private String price;
+
+    private String courseDescription;
 
     @ManyToOne(
             cascade = CascadeType.MERGE,

@@ -34,6 +34,7 @@ function TutorPublish() {
     const [formData, setFormData] = useState({
         courseName: '',
         courseCategory: '',
+        courseDescription: '',
         price: '',
         tutor: {
             tutorId: ''
@@ -79,6 +80,8 @@ function TutorPublish() {
                     <h1 className="text-2xl font-bold mb-8">Course Registration Form</h1>
 
                     <form onSubmit={handleSubmit}>
+
+                        {/* Course Name */}
                         <div className="mb-4">
                             <label
                                 htmlFor="courseName"
@@ -96,6 +99,7 @@ function TutorPublish() {
                             />
                         </div>
 
+                        {/* Course Category */}
                         <div className="mb-4">
                             <label htmlFor="courseCategory" className="block text-gray-600 font-medium mb-2">
                                 Course Category
@@ -111,6 +115,7 @@ function TutorPublish() {
                             />
                         </div>
 
+                        {/* Course price */}
                         <div className="mb-4">
                             <label htmlFor="price" className="block text-gray-600 font-medium mb-2">
                                 Price ($)
@@ -121,6 +126,22 @@ function TutorPublish() {
                                 name='price'
                                 className="px-4 py-2 w-full border rounded-lg focus:ring focus:ring-blue-300 outline-none"
                                 value={formData.price}
+                                onChange={handleChange}
+                                required
+                            />
+                        </div>
+
+                        {/* Course Description */}
+                        <div className="mb-4">
+                            <label htmlFor="price" className="block text-gray-600 font-medium mb-2">
+                                Course Description
+                            </label>
+                            <textarea
+                                type="number"
+                                id="courseDescription"
+                                name='courseDescription'
+                                className="px-4 py-2 w-full border rounded-lg focus:ring focus:ring-blue-300 outline-none"
+                                value={formData.courseDescription}
                                 onChange={handleChange}
                                 required
                             />

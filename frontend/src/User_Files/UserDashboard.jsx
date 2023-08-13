@@ -50,7 +50,7 @@ function UserDashboard() {
                 return {
                     courseName: course.courseName,
                     category: course.courseCategory,
-                    description: "course.courseDescription",
+                    description: course.courseDescription,
                     price: course.price,
                     tutorName: course.tutor.tutorName
                 };
