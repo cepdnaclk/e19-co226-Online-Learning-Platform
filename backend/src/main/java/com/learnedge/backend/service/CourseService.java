@@ -7,6 +7,8 @@ import java.util.List;
 public interface CourseService {
     List<Course> fetchCoursesList();
 
+    List<Course> fetchCoursesByTutorId(Long tutorId);
+
     Course saveCourse(Course course);
 
     List <Course> findUnenrolledCourses(Long userId);

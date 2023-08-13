@@ -11,6 +11,12 @@ import java.util.List;
 @Repository
 public interface CourseRepository extends JpaRepository<Course, Long> {
     @Query(
+            value = "SELECT c.* FROM course c WHERE c.tutor_id=:tutorId",
+            nativeQuery = true
+    )
+    List<Course> getCoursesByTutorId(Long tutorId);
+
+    @Query(
             value = "SELECT c.* FROM course c " +
                     "LEFT JOIN enrollment e ON c.course_id = e.course_id AND e.user_id = :userId " +
                     "WHERE e.course_id IS NULL",
@@ -24,4 +30,5 @@ public interface CourseRepository extends JpaRepository<Course, Long> {
             nativeQuery = true
     )
     List<Course> findEnrolledCoursesByUserId(@Param("userId") Long userId);
+
 }
