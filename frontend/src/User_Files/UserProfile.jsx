@@ -32,7 +32,7 @@ function UserProfile() {
     return (
         <>
             <UserNavbar />
-            <div className='pb-20 p-5 select-none bg-stone-200'>
+            <div className='pb-20 p-5 select-none bg-gradient-to-t from-gray-500 to-stone-300'>
                 {/* content goes inside this div */}
                 <h1 className='text-2xl text-center font-bold'>My Profile</h1>
 

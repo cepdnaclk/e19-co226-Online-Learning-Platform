@@ -61,7 +61,7 @@ function UserNavbar() {
                 <div className="flex items-center gap-6">
                     {/* Logout Button */}
                     <button
-                        className="bg-gray-300 hover:bg-gray-400 text-gray-900 font-bold py-1 px-2 rounded inline-flex items-center"
+                        className="bg-green-400 hover:bg-purple-400 text-black font-bold py-2 px-2 rounded inline-flex items-center"
                         onClick={() => backHome(homePath)}>
                         <CgLogOut fontSize={20} />
                         <span className='pl-1'>Log Out</span>

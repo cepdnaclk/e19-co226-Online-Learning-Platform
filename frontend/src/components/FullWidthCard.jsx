@@ -41,11 +41,11 @@ const FullWidthCard = ({ courseName, courseCategory, courseDescription, price, t
 
         <a href='#' className="my-5 sm:max-w-full sm:flex">
             <div
-                className="h-72 sm:h-auto sm:w-72 flex-none bg-cover rounded-t sm:rounded-t-none sm:rounded-l text-center overflow-hidden"
+                className="h-72 sm:h-auto sm:w-72 flex-none bg-cover rounded-t-2xl sm:rounded-l-2xl sm:rounded-t-none text-center overflow-hidden"
                 style={{ backgroundImage: `url(${imageSource})` }} >
             </div>
 
-            <div className="w-full bg-gray-100 rounded-b sm:rounded-b-none sm:rounded-r p-4 flex flex-col justify-between leading-normal">
+            <div className="w-full bg-gradient-to-r from-gray-100 to-gray-300 rounded-b-2xl sm:rounded-r-2xl sm:rounded-b-none p-4 flex flex-col justify-between leading-normal">
                 <div className="mb-2">
                     <div className="text-gray-900 font-bold text-3xl">
                         {courseName}
@@ -53,7 +53,7 @@ const FullWidthCard = ({ courseName, courseCategory, courseDescription, price, t
                     <p className="pl-3 text-xl text-gray-600 flex items-center my-1">
                         👨‍🏫 Published By: {tutorName}
                     </p>
-                    <p className="text-gray-700 text-base border-2 border-black mt-4">
+                    <p className="text-gray-700 text-base border-2 border-black mt-4 leading-relaxed">
                         {courseDescription}
                     </p>
 
