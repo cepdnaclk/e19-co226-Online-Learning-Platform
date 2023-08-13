@@ -79,7 +79,7 @@ function Homepage() {
                             Look no further! <b>Join LearnEdge</b>🌟
                         </p>
                         <button
-                            className="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-2 focus:ring-green-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+                            className="animate-pulse focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-2 focus:ring-green-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
                             onClick={() => navigateSignup(registerPath)} >
                             Sign Up
                         </button>
@@ -124,7 +124,7 @@ function Homepage() {
                     <p className="pt-2 mb-3">How to Get Started? 🚀</p>
                     <p>Click
                         <button
-                            className="mx-3 focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-2 focus:ring-green-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+                            className="animate-pulse mx-3 focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-2 focus:ring-green-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
                             onClick={() => navigateSignupTutor(registerTutor)} >
                             Sign Up as a Tutor
                         </button>
