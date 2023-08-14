@@ -83,7 +83,7 @@ const Card = ({name, category, price, buttonText, courseID}) => {
       axios.post('http://localhost:9081/enroll/addenroll', courseEnroll)
       .then((response) => {
         window.alert("Registered successfully. Happy Learning!")
-        window.location.reload();
+        //window.location.reload();
       })
         
       .catch((error) => {
@@ -94,7 +94,7 @@ const Card = ({name, category, price, buttonText, courseID}) => {
     //User is not logged in. Click the button from the course page
     else {
       alert("Register")
-      console.log(courseEnroll);
+      //console.log(courseEnroll);
     }
 
   };
