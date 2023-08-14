@@ -1,5 +1,8 @@
-import React from "react";
-import {Route, Routes} from "react-router-dom";
+import React, {useState} from "react";
+import { Route, Routes } from "react-router-dom";
+
+import PrivateRouteUser from "./components/PrivateRouteUser";
+import PrivateRouteTutor from "./components/PrivateRouteTutor";
 
 import Homepage from "./HomePage_Files/Homepage";
 import About from "./HomePage_Files/About";
@@ -24,6 +27,22 @@ import MachineLearning from "./Course_Files/machineLearning";
 import PythonProgramming from "./Course_Files/pythonProgramming";
 
 function App() {
+
+  //User Log Status
+  const [userLogged, setUserLogStatus] = useState(false);
+
+  const isUserLog = (data) => {
+    setUserLogStatus(data);
+  };
+
+  //Tutor Log status
+  const [tutorLogged, setTutorLogStatus] = useState(false);
+
+  const isTutorLog = (data) => {
+    setTutorLogStatus(data);
+  };
+
+
   return (
     <Routes>
       {/* HomePage */}
@@ -31,21 +50,26 @@ function App() {
       <Route path="/about" element={<About />} />
       <Route path="/services" element={<Services />} />
       <Route path="/contact" element={<HomeContact />} />
-
-      {/* User */}
-      <Route path="/user/dashboard" element={<UserDashboard />} />
-      <Route path="/user/profile" element={<UserProfile />} />
-      <Route path="/user/contact" element={<UserContact />} />
-      <Route path="/user/allcourses" element={<UserAllCourses />} />
+   
+      {/* User */} 
+      <Route element={<PrivateRouteUser isLogged={userLogged} />}>
+        <Route path="/user/dashboard" element={<UserDashboard />} />
+        <Route path="/user/profile" element={<UserProfile />} />
+        <Route path="/user/contact" element={<UserContact />} />
+        <Route path="/user/allcourses" element={<UserAllCourses />} />
+      </Route>
 
       {/* Tutor */}
-      <Route path="/tutor/dashboard" element={<Tutor />} />
-      <Route path="/tutor/publish" element={<TutorPublish />} />
-      <Route path="/tutor/contact" element={<TutorContact />} />
+      <Route element={<PrivateRouteTutor isLogged={tutorLogged}/>}>
+        <Route path="/tutor/dashboard" element={<Tutor />} />
+        <Route path="/tutor/publish" element={<TutorPublish />} />
+        <Route path="/tutor/contact" element={<TutorContact />} />
+      </Route>
+
 
       {/* Login/Sign In */}
-      <Route path="/login" element={<LoginForm />} />
-      <Route path="/logintutor" element={<LoginTutor />} />
+      <Route path="/login" element={<LoginForm isLogged={isUserLog} />} />
+      <Route path="/logintutor" element={<LoginTutor isLogged={isTutorLog}/>} />
       <Route path="/register" element={<RegisterForm />} />
       <Route path="/regtutor" element={<TutorRegister />} />
 
@@ -53,6 +77,7 @@ function App() {
       <Route path="/machineLearning" element={<MachineLearning />} />
       <Route path="/pythonProgramming" element={<PythonProgramming />} />
     </Routes>
+
   );
 }
 

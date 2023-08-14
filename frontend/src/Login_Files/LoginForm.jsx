@@ -2,7 +2,12 @@ import React, { useState } from 'react';
 
 import { useNavigate } from "react-router-dom";
 
-function LoginForm() {
+function LoginForm({ isLogged }) {
+
+    //Send data --> User is logged
+    const sendLoginStatus = () => {
+        isLogged(true);
+      };
 
     const navigate = useNavigate();
 
@@ -35,13 +40,14 @@ function LoginForm() {
                 // Handle successful login, e.g., redirect to dashboard
                 
                 localStorage.setItem('userEmail', userEmail);
+                sendLoginStatus()
 
                 notification.className = "text-center p-4 text-sm text-green-800 rounded-lg bg-green-50 font-bold w-full";
                 notification.textContent = "Login Successful. Happy Learning 🎊"
 
                 setTimeout(function() {
                     navigate("/user/dashboard");
-                }, 2000);
+                }, 1500);
 
             }
             

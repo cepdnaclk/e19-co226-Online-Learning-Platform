@@ -2,8 +2,13 @@ import React, { useState } from 'react';
 
 import { useNavigate } from "react-router-dom";
 
-function LoginTutor() {
+function LoginTutor({ isLogged }) {
 
+    //Send data --> Tutor is logged
+    const sendLoginStatus = () => {
+        isLogged(true);
+    };
+    
     const navigate = useNavigate();
 
     const homePath = "/"
@@ -33,13 +38,14 @@ function LoginTutor() {
             if (response.ok) {
                 
                 localStorage.setItem('tutorEmail', tutorEmail);
+                sendLoginStatus()
 
                 notification.className = "text-center p-4 text-sm text-green-800 rounded-lg bg-green-50 font-bold w-full";
                 notification.textContent = "Login Successful. Happy Learning 🎊"
 
                 setTimeout(function() {
                     navigate("/tutor/dashboard");
-                }, 2000);
+                }, 1500);
 
             }
             
