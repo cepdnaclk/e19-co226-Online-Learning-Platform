@@ -18,7 +18,10 @@ function LoginTutor() {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
+        let notification = document.getElementById("alertmsgtutor");
+
         try {
+
             const response = await fetch('http://localhost:9081/tutor/login', {
                 method: 'POST',
                 headers: {
@@ -28,14 +31,27 @@ function LoginTutor() {
             });
 
             if (response.ok) {
-                alert('Login successful!');
+                
                 localStorage.setItem('tutorEmail', tutorEmail);
-                navigate("/tutor/dashboard")
-            } else {
-                // Handle login failure, e.g., show error message
-                alert('Login failed. Please check your credentials.');
+
+                notification.className = "text-center p-4 text-sm text-green-800 rounded-lg bg-green-50 font-bold w-full";
+                notification.textContent = "Login Successful. Happy Learning 🎊"
+
+                setTimeout(function() {
+                    navigate("/tutor/dashboard");
+                }, 2000);
+
             }
-        } catch (error) {
+            
+            else {
+                // Handle login failure, e.g., show error message
+                notification.className = "text-center p-4 text-sm text-red-800 rounded-lg bg-red-50 font-bold w-full";
+                notification.textContent = "Login failed. Check your credential"
+
+            }
+        }
+        
+        catch (error) {
             console.error('Error during login:', error);
         }
     };
@@ -44,7 +60,7 @@ function LoginTutor() {
         <div className="min-h-screen bg-gradient-to-bl from-gray-500 via-black to-gray-500 py-6 flex flex-col justify-center sm:py-12">
             <div className="relative py-3 sm:max-w-xl sm:mx-auto">
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-300 to-blue-600 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl"></div>
-                <div className="relative px-4 py-10 bg-white shadow-lg sm:rounded-3xl sm:p-20">
+                <div className="relative p-4 bg-white shadow-lg sm:rounded-3xl sm:p-10">
                     <div className="max-w-md mx-auto">
                         <div>
                             <h1 className="text-2xl font-semibold">
@@ -115,6 +131,13 @@ function LoginTutor() {
                                 </div>
                             </div>
                         </form>
+
+                        <div id="alertmsgtutor"
+                             className="text-center p-4 text-sm text-transparent rounded-lg bg-transparent font-bold w-full"
+                             role="alert">
+                            LearnEdge. login here.. Happy Learn
+                        </div>
+
                     </div>
                 </div>
             </div>

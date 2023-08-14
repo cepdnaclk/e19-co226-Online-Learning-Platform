@@ -20,6 +20,8 @@ function TutorNavbar() {
 
     const backHome = (path) => {
         localStorage.removeItem('tutorEmail');
+        localStorage.removeItem('tutorID');
+        
         navigate(path);
     }
 
