@@ -47,7 +47,8 @@ function UserAllCourses() {
     return (
         <>
             <UserNavbar />
-            <div className='pb-20 p-5 select-none grid grid-cols-4 gap-4'>
+            <h1 className='text-4xl text-center mt-4'>Pick a Course and Start Learning 🎓</h1>
+            <div className='pb-20 p-5 pt-10 select-none grid grid-cols-4 gap-4'>
                 {/* content goes inside this div */}
                 {
                     courseList.map((course, index) => (
