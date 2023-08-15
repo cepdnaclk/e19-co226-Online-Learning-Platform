@@ -8,30 +8,47 @@ import LawImage from './images/courseImages/law.jpg'
 import MachineLearning from './images/courseImages/machineLearning.jpg'
 import WebImage from './images/courseImages/web.jpg'
 import HistoryImage from './images/courseImages/history.jpg'
-
+import ScienceImage from "./images/courseImages/science.jpg";
+import LiteratureImage from "./images/courseImages/literature.jpg";
 
 const FullWidthCard = ({ courseName, courseCategory, courseDescription, price, tutorName }) => {
 
     let imageSource;
+    
     switch (courseCategory) {
+
         case "Programming":
             imageSource = ProgrammingImage;
             break;
+        
         case "Artificial Intelligence":
             imageSource = aiImage;
             break;
+        
         case "History":
             imageSource = HistoryImage;
             break;
+        
         case "Machine Learning":
             imageSource = MachineLearning;
             break;
+        
         case "Law":
             imageSource = LawImage;
             break;
+        
         case "Web Development":
             imageSource = WebImage;
             break;
+        
+        case "Science":
+            imageSource = ScienceImage;
+            break;
+    
+        case "Literature":
+            imageSource = LiteratureImage;
+            break;
+        
         default:
             imageSource = generalImage;
             break;

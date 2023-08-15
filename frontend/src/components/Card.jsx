@@ -9,6 +9,8 @@ import LawImage from "./images/courseImages/law.jpg";
 import MachineLearning from "./images/courseImages/machineLearning.jpg";
 import WebImage from "./images/courseImages/web.jpg";
 import HistoryImage from "./images/courseImages/history.jpg";
+import ScienceImage from "./images/courseImages/science.jpg";
+import LiteratureImage from "./images/courseImages/literature.jpg";
 
 import axios from "axios";
 
@@ -19,7 +21,9 @@ const Card = ({name, category, price, buttonText, courseID}) => {
 
   //Take the image relevant to the course
   let imageSource;
+  
   switch (category) {
+
     case "Programming":
       imageSource = ProgrammingImage;
       break;
@@ -42,6 +46,14 @@ const Card = ({name, category, price, buttonText, courseID}) => {
 
     case "Web Development":
       imageSource = WebImage;
+      break;
+    
+    case "Science":
+      imageSource = ScienceImage;
+      break;
+    
+    case "Literature":
+      imageSource = LiteratureImage;
       break;
 
     default:
