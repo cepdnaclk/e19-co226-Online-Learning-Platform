@@ -38,19 +38,85 @@ Traditional education often presents barriers to learning, such as limited acces
 Our online learning platform offers a revolutionary solution to the drawbacks of traditional education. By providing a vast library of courses spanning various disciplines, learners can pick subjects that genuinely interest them and learn at their own pace. The platform also features interactive elements, including discussion forums, assignments, fostering a dynamic learning community. Additionally, our affordable pricing model ensures that cost is not a barrier to obtaining valuable knowledge and skills. Through cutting-edge technology and a dedication to excellence, we are redefining the future of learning, empowering learners to shape their educational journey according to their unique needs and aspirations.
 
 ## ER Diagram
-<img src="https://github.com/cepdnaclk/e19-co226-Online-Learning-Platform/assets/115539769/6eb844b1-1fe7-4e11-ab21-2d2ffa1c825f" />
+<img src="https://github.com/cepdnaclk/e19-co226-Online-Learning-Platform/assets/115539769/dd3f3b1f-d20f-49ce-b9b8-9ec2444617cc" />
 
 ## Relational Mapping
-<img src="https://github.com/cepdnaclk/e19-co226-Online-Learning-Platform/assets/115540884/21819c86-4076-4266-adce-1dda2c7bd65f" />
+<img src="https://github.com/cepdnaclk/e19-co226-Online-Learning-Platform/assets/115540884/21819c86-4076-4266-adce-1dda2c7bd65f" width=800 />
 
 ## Tech Stack
-Add-image
-### Front End
 
-### Back End
+### <u>Front End</u>
+
+Technologies Used: React, Javascript, HTML5, TailwindCSS
+
+<img src="https://github.com/cepdnaclk/e19-co226-Online-Learning-Platform/assets/115539769/ad663d60-b7bd-4703-9b33-7a2b4837e536" width=250 />
+
+#### React :
+- React is a popular JavaScript library for building user interfaces.
+- It allows developers to create reusable UI components and efficiently manage the dynamic rendering of data-driven views in web applications.
+
+#### JavaScript :
+- JavaScript is a versatile programming language primarily used for web development.
+- It enables interactive and dynamic content on websites, offering capabilities for both front-end and back-end development through frameworks like <b>Node.js.</b>
+
+#### Tailwind CSS :
+- Tailwind CSS is a utility-first CSS framework that streamlines web development by providing a set of pre-designed classes to style elements.
+- It enables rapid UI design and customization while promoting consistency in styling across projects.
+
+#### HTML5 :
+- HTML5 is the latest version of Hypertext Markup Language, used to structure and present content on the web.
+- It introduces new features like semantic elements, multimedia support, and improved forms for enhanced user experiences.
+
+### <u>Back End</u>
+
+Technologies Used: Springboot, Node.js, MySQL
+
+<img src="https://github.com/cepdnaclk/e19-co226-Online-Learning-Platform/assets/115539769/050b5fe8-890d-455f-9cdc-f91d0f410445" width=350 />
+
+#### Spring Boot :
+- Spring Boot is a Java-based framework that simplifies the process of building production-ready web applications.
+- It provides a set of tools and conventions for rapid development and easy configuration.
+
+#### Node.js :
+- Node.js is a server-side JavaScript runtime environment.
+- It allows developers to build scalable and high-performance network applications, making it well-suited for creating real-time web applications.
+
+#### MySQL :
+- MySQL is an open-source relational database management system.
+- It is widely used for storing and managing structured data in various types of applications, from small websites to large enterprise systems.
+
+## Connecting Spring Boot with React:
+
+1. API Endpoints:
+- Spring Boot defines a set of API endpoints that the React frontend can call.
+- These endpoints are usually implemented using controllers and mapped to specific URLs.
+- Each endpoint corresponds to a specific action, such as retrieving data, updating information, or submitting forms.
+
+2. HTTP Requests:
+- React frontend uses various HTTP methods (such as GET, POST, PUT, DELETE) to send requests to the Spring Boot backend.
+- For instance, when fetching data, React sends a GET request to the appropriate endpoint. When submitting a form, it might send a POST request with the form data.
+
+3. Data Transfer:
+- Data is transferred between the frontend and backend using JSON (JavaScript Object Notation) format.
+- Spring Boot serializes and deserializes JSON data to Java objects, while React uses JavaScript objects to work with the data.
+
+4. CORS (Cross-Origin Resource Sharing):
+- Due to security restrictions in web browsers, frontend and backend may be hosted on different domains.
+- CORS headers need to be properly configured on the backend to allow cross-origin requests from the React frontend.
+
+5. State Management:
+- React manages its own state using tools like React's built-in state or third-party libraries like Redux.
+- The backend manages its own state and data storage, such as in a database.
+
 <img src="https://github.com/cepdnaclk/e19-co226-Online-Learning-Platform/assets/115539769/ea614eb1-698f-4089-9148-f1010d3e7758" width=300/>
 
 ## User Interface
+
+1. Home Page
+
+<img src="https://github.com/cepdnaclk/e19-co226-Online-Learning-Platform/assets/115539769/ca1dec5a-a2bf-4236-8724-9f8ccb7a5202" width=1000/>
+<img src="https://github.com/cepdnaclk/e19-co226-Online-Learning-Platform/assets/115539769/3e111129-d0cc-4250-ae3d-be674c3871b3" width=1000/>
+<img src="https://github.com/cepdnaclk/e19-co226-Online-Learning-Platform/assets/115539769/87104de8-0421-4b32-b426-2b548c56954c" width=1000/>
 
 ## Links
 - [Project Repository](https://github.com/cepdnaclk/{{ page.repository-name }}){:target="_blank"}
