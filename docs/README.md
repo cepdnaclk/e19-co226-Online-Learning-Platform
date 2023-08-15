@@ -22,8 +22,10 @@ title: LearnEdge
 2. [ER Diagram](#er-diagram)
 3. [Relational Mapping](#relational-mapping)
 4. [Tech Stack](#tech-stack)
-5. [User Interface](#user-interface)
-6. [Links](#links)
+5. [Connecting Spring Boot with React](#connecting-spring-boot-with-react)
+6. [User Interface](#user-interface)
+7. [Additional Features](#additional-features)
+8. [Links](#links)
 
 ---
 
@@ -38,7 +40,7 @@ Traditional education often presents barriers to learning, such as limited acces
 Our online learning platform offers a revolutionary solution to the drawbacks of traditional education. By providing a vast library of courses spanning various disciplines, learners can pick subjects that genuinely interest them and learn at their own pace. The platform also features interactive elements, including discussion forums, assignments, fostering a dynamic learning community. Additionally, our affordable pricing model ensures that cost is not a barrier to obtaining valuable knowledge and skills. Through cutting-edge technology and a dedication to excellence, we are redefining the future of learning, empowering learners to shape their educational journey according to their unique needs and aspirations.
 
 ## ER Diagram
-<img src="https://github.com/cepdnaclk/e19-co226-Online-Learning-Platform/assets/115539769/dd3f3b1f-d20f-49ce-b9b8-9ec2444617cc" />
+<img src="https://github.com/cepdnaclk/e19-co226-Online-Learning-Platform/assets/115539769/dd3f3b1f-d20f-49ce-b9b8-9ec2444617cc" width=1200 />
 
 ## Relational Mapping
 <img src="https://github.com/cepdnaclk/e19-co226-Online-Learning-Platform/assets/115540884/21819c86-4076-4266-adce-1dda2c7bd65f" width=800 />
@@ -114,9 +116,49 @@ Technologies Used: Springboot, Node.js, MySQL
 
 1. Home Page
 
-<img src="https://github.com/cepdnaclk/e19-co226-Online-Learning-Platform/assets/115539769/ca1dec5a-a2bf-4236-8724-9f8ccb7a5202" width=1000/>
-<img src="https://github.com/cepdnaclk/e19-co226-Online-Learning-Platform/assets/115539769/3e111129-d0cc-4250-ae3d-be674c3871b3" width=1000/>
-<img src="https://github.com/cepdnaclk/e19-co226-Online-Learning-Platform/assets/115539769/87104de8-0421-4b32-b426-2b548c56954c" width=1000/>
+<img src="https://github.com/cepdnaclk/e19-co226-Online-Learning-Platform/assets/115539769/ca1dec5a-a2bf-4236-8724-9f8ccb7a5202" width=1200/> 
+<br><br><br>
+
+<img src="https://github.com/cepdnaclk/e19-co226-Online-Learning-Platform/assets/115539769/3e111129-d0cc-4250-ae3d-be674c3871b3" width=1200/> 
+<br><br><br>
+
+<img src="https://github.com/cepdnaclk/e19-co226-Online-Learning-Platform/assets/115539769/87104de8-0421-4b32-b426-2b548c56954c" width=1200/> 
+<br><br><br>
+
+2. User Page
+
+- User Login Page
+<img src="https://github.com/cepdnaclk/e19-co226-Online-Learning-Platform/assets/115539769/175935b0-0787-4320-bff0-67d4c8ee0ebf" width=1200/>
+<br><br>
+
+- User Dashboard 
+<img src="https://github.com/cepdnaclk/e19-co226-Online-Learning-Platform/assets/115539769/0af6b642-1119-4f7e-a775-564584a62e3c" width=1200/>
+<br><br>
+
+<img src="https://github.com/cepdnaclk/e19-co226-Online-Learning-Platform/assets/115539769/65a8d192-1c72-40fe-bff8-7b8af6e0d6ea" width=1200/>
+<br><br>
+
+3. Tutor Page
+
+- Tutor Login Page
+<img src="https://github.com/cepdnaclk/e19-co226-Online-Learning-Platform/assets/115539769/2c9a3357-dfeb-42f5-9223-a126ab0eccc4" width=1200/>
+<br><br>
+
+- Tutor Dashboard 
+<img src="https://github.com/cepdnaclk/e19-co226-Online-Learning-Platform/assets/115539769/f41d9750-eeed-4a5b-9314-4a784145c56c" width=1200/>
+<br><br>
+
+<img src="https://github.com/cepdnaclk/e19-co226-Online-Learning-Platform/assets/115539769/2586cc94-c990-4fba-a7bf-7ac24df37243" width=1200/>
+<br><br>
+
+## Additional Features
+- Upon the completion and submission of the 'Contact Us' form, a mail is send with the form details
+
+### "Contact Us form"
+<img src="https://github.com/cepdnaclk/e19-co226-Online-Learning-Platform/assets/115539769/39701b13-211b-4f1d-aa88-1c9388d4a43f" width=1200/>
+
+### Email
+<img src="https://github.com/cepdnaclk/e19-co226-Online-Learning-Platform/assets/115539769/ac4dbc5d-44b8-4e15-add1-076f9dc5b0be" width=600/>
 
 ## Links
 - [Project Repository](https://github.com/cepdnaclk/{{ page.repository-name }}){:target="_blank"}
