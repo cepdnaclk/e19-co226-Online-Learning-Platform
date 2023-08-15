@@ -41,7 +41,7 @@ Our online learning platform offers a revolutionary solution to the drawbacks of
 <img src="https://github.com/cepdnaclk/e19-co226-Online-Learning-Platform/assets/115539769/6eb844b1-1fe7-4e11-ab21-2d2ffa1c825f" />
 
 ## Relational Mapping
-<img src="https://github.com/cepdnaclk/e19-co226-Online-Learning-Platform/assets/115540884/f262eeec-3669-463e-b91f-311b2e929457"/>
+<img src="https://github.com/cepdnaclk/e19-co226-Online-Learning-Platform/assets/115540884/21819c86-4076-4266-adce-1dda2c7bd65f" />
 
 ## Tech Stack
 Add-image
