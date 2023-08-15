@@ -128,10 +128,12 @@ Technologies Used: Springboot, Node.js, MySQL
 2. User Page
 
 - User Login Page
+  
 <img src="https://github.com/cepdnaclk/e19-co226-Online-Learning-Platform/assets/115539769/175935b0-0787-4320-bff0-67d4c8ee0ebf" width=1200/>
 <br><br>
 
-- User Dashboard 
+- User Dashboard
+  
 <img src="https://github.com/cepdnaclk/e19-co226-Online-Learning-Platform/assets/115539769/0af6b642-1119-4f7e-a775-564584a62e3c" width=1200/>
 <br><br>
 
@@ -141,10 +143,12 @@ Technologies Used: Springboot, Node.js, MySQL
 3. Tutor Page
 
 - Tutor Login Page
+  
 <img src="https://github.com/cepdnaclk/e19-co226-Online-Learning-Platform/assets/115539769/2c9a3357-dfeb-42f5-9223-a126ab0eccc4" width=1200/>
 <br><br>
 
-- Tutor Dashboard 
+- Tutor Dashboard
+
 <img src="https://github.com/cepdnaclk/e19-co226-Online-Learning-Platform/assets/115539769/f41d9750-eeed-4a5b-9314-4a784145c56c" width=1200/>
 <br><br>
 
