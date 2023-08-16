@@ -36,7 +36,7 @@ function UserNavbar() {
     ];
 
     return (
-        <header className="bg-black text-white pt-4 pb-2 select-none">
+        <header className="bg-black text-white pt-4 pb-2 select-none z-10">
             <nav className="flex justify-between items-center w-[92%] mx-auto">
                 <div>
                     <div className="inline-block mr-2">

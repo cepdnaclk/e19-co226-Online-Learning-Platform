@@ -51,17 +51,37 @@ function RegisterForm() {
         setFormData({ ...formData, [name]: value });
     };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
+    const [canRegStatus, setCanRegStatus] = useState([])
 
-        axios.post('http://localhost:9081/user/adduser', formData)
-            .then((response) => {
-                window.alert("Registered successfully. Happy Learning!")
-                navigateHome(homePath)
-            })
-            .catch((error) => {
-                console.error('Error submitting form:', error);
-            });
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        
+        try {
+            const isEmailRegistered = await axios.get(`http://localhost:9081/user/email/${formData.userEmail}`);
+
+            if (isEmailRegistered.data == "") {
+
+                axios.post('http://localhost:9081/user/adduser', formData)
+                .then((response) => {
+                    window.alert("Registered successfully. Happy Learning!")
+                    navigateHome(homePath)
+                    console.log()
+                })
+                .catch((error) => {
+                    console.error('Error submitting form:', error);
+                });
+
+            }
+            else {
+                alert("Your Email already has an account")
+            }
+        }
+
+        catch (error) {
+            console.error("Error fetching courses:", error);
+        }
+
+ 
     };
 
     return (

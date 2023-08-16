@@ -75,7 +75,7 @@ function LoginForm({ isLogged }) {
                         
                         <div>
                             <h1 className="text-2xl font-semibold">
-                                Log In - User
+                                Log In - Student
                             </h1>
                         </div>
 

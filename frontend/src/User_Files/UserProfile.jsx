@@ -46,7 +46,7 @@ function UserProfile() {
 
                 <section className="bg-blueGray-50">
                     <div className="mt-8 w-full lg:w-6/12 mx-auto">
-                        <div className="relative flex flex-col min-w-0 break-words bg-white w-full shadow-xl rounded-lg ">
+                        <div className=" flex flex-col min-w-0 break-words bg-white w-full shadow-xl rounded-lg ">
                             <div className="px-5 pb-5">
 
                                 <div className="flex flex-wrap justify-center">
