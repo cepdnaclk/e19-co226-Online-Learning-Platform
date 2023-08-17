@@ -18,10 +18,6 @@
     ],
     "supervisors": [
         {
-            "name": "Dr. Eng. Kamalanath Samarakoon",
-            "email": "kamalanath@eng.pdn.ac.lk"
-        },
-        {
             "name": "Dr. Manjula Sandirigama",
             "email": "manjula.sandirigama@eng.pdn.ac.lk"
         }
