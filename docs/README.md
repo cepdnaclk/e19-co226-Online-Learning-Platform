@@ -12,6 +12,8 @@ title: LearnEdge
 # LearnEdge - <i>Learn Anytime Anywhere</i>
 <img src="https://github.com/cepdnaclk/e19-co226-Online-Learning-Platform/assets/115539769/448e60c5-6893-4546-8547-f66f5e59c317"/>
 
+<h2><a href="https://lakshithakaveen.github.io/frontend/">Frontend Deployment</a></h2>
+
 ## Team
 -  E/19/095, Edirisinghe E.M.L.K., [email](mailto:e19095@eng.pdn.ac.lk)
 -  E/19/253, Narasinghe N.K.B.I.U., [email](mailto:e19253@eng.pdn.ac.lk)
