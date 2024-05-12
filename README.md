@@ -1,6 +1,9 @@
 <h1>LearnEdge</h1>
 <img src="https://github.com/cepdnaclk/e19-co226-Online-Learning-Platform/assets/115539769/3b4982f8-2fda-4425-a4d4-e53ec4720cd9"/>
 
+- <a href="https://lakshithakaveen.github.io/frontend/">Frontend Deployment</a>
+- <a href="https://cepdnaclk.github.io/e19-co226-Online-Learning-Platform/">Documentation</a>
+
 <h3>Welcome to LearnEdge, your gateway to a world of boundless knowledge and endless possibilities! 🚀 </h3>
 
 <p>LearnEdge is a online learning platform designed to empower learners of all ages and backgrounds to unleash their potential and achieve their dreams.</p>
